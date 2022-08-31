@@ -22,15 +22,15 @@ class RecipeCrudController extends AbstractCrudController
     {
         return [
 
-            TextField::new('title'),
+            TextField::new('title', 'Nom de la recette'),
             TextEditorField::new('description'),
-            TimeField::new('setup_time'),
-            TimeField::new('rest_time'),
-            TimeField::new('cooking_time'),
-            TextEditorField::new('Steps'),
+            TimeField::new('setup_time', 'Temps de préparation'),
+            TimeField::new('rest_time', 'Temps de repos'),
+            TimeField::new('cooking_time', 'Temps de cuisson'),
+            ArrayField::new('Steps', 'Etapes'),
             ArrayField::new('ingredients'),
-            AssociationField::new('allergen_id'),
-            AssociationField::new('diet_id'),
+            AssociationField::new('allergen_id', 'Nombre d\'allergènes'),
+            AssociationField::new('diet_id', 'Nombre de régime compatible'),
         ];
     }
 

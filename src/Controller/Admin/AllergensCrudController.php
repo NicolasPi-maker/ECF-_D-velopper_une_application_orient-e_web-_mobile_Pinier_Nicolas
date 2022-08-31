@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Allergens;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class AllergensCrudController extends AbstractCrudController
 {
@@ -12,14 +13,10 @@ class AllergensCrudController extends AbstractCrudController
         return Allergens::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            TextField::new('name', 'Produit'),
         ];
     }
-    */
 }

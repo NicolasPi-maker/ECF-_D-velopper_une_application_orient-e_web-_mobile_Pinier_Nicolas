@@ -21,7 +21,8 @@ class PatientCrudController extends AbstractCrudController
             TextField::new('name'),
             TextField::new('lastName'),
             AssociationField::new('allergen_id'),
-            AssociationField::new('diet_id')
+            AssociationField::new('diet_id'),
+            AssociationField::new('patient_user_id'),
 
         ];
     }
