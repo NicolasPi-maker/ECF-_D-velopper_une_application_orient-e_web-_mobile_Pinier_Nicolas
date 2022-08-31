@@ -34,14 +34,14 @@ class Recipe
     #[ORM\Column]
     private array $ingredients = [];
 
-    #[ORM\Column(length: 255)]
-    private ?string $steps = null;
-
     #[ORM\ManyToMany(targetEntity: Allergens::class, inversedBy: 'recipes')]
     private Collection $allergen_id;
 
     #[ORM\ManyToMany(targetEntity: Diets::class, inversedBy: 'recipes')]
     private Collection $diet_id;
+
+    #[ORM\Column]
+    private array $steps = [];
 
     public function __construct()
     {
@@ -126,18 +126,6 @@ class Recipe
         return $this;
     }
 
-    public function getSteps(): ?string
-    {
-        return $this->steps;
-    }
-
-    public function setSteps(string $steps): self
-    {
-        $this->steps = $steps;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, Allergens>
      */
@@ -182,6 +170,18 @@ class Recipe
     public function removeDietId(Diets $dietId): self
     {
         $this->diet_id->removeElement($dietId);
+
+        return $this;
+    }
+
+    public function getSteps(): array
+    {
+        return $this->steps;
+    }
+
+    public function setSteps(array $steps): self
+    {
+        $this->steps = $steps;
 
         return $this;
     }
