@@ -1,0 +1,63 @@
+main {
+    margin: -8px;
+}
+
+.recipe-mainTitle {
+    display: flex;
+    justify-content: center;
+    color: #c4dfaa;
+    font-size: 3.5em;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+
+.welcome-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.photo-wrapper {
+    position: relative;
+}
+
+.recipe-reviewAverage {
+    position: absolute;
+    top: 10px;
+    margin: 0.5em;
+    font-size: 1em;
+    color: whitesmoke;
+    text-shadow: 0 4px 4px grey;
+    font-family: 'Carme', sans-serif;
+}
+
+.quick-info-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.recipe-quick-info {
+    display: flex;
+    align-items: center;
+}
+
+.time {
+    display: block;
+    font-size: 1em;
+    font-family: 'Baloo Chettan 2',cursive;
+}
+
+h3 {
+    font-family: "Baloo Chettan 2", cursive;
+    font-size: 1.5em;
+    display: inline-block;
+    padding-bottom: 0.5em;
+    border-bottom: solid 6px #f4b270 ;
+    margin-bottom: 0;
+}
+
+.recipe-info {
+    margin: 0 2em;
+    text-align: justify;
+    font-size: 1em;
+}

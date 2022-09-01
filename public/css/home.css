@@ -1,0 +1,43 @@
+main {
+    margin: -8px;
+}
+
+.welcome-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.recipe-wrapper {
+    position: relative;
+}
+
+.recipe-mainTitle {
+    display: flex;
+    justify-content: center;
+    color: #c4dfaa;
+    font-size: 3.5em;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+
+.recipe-title {
+    position: absolute;
+    text-shadow: 6px 6px 6px grey;
+    text-decoration: black;
+    margin: 0.5em;
+    color: whitesmoke;
+    font-weight: bold;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-size: 3em;
+}
+
+.recipe-img {
+    animation: ease-in 0.2s;
+    width: 100%;
+    height: auto;
+}
+
+.recipe-img:hover {
+    animation: ease-in 0.2s;
+    opacity: 70%;
+}

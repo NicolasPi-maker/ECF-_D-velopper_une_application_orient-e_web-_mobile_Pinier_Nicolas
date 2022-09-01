@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Hurricane&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fenix&display=swap');
+
+
+.body {
+    display: flex;
+    width: 100%;
+    height: 98vh;
+    margin: 0;
+
+}
+
+header {
+    border-bottom: solid 1px lightgray;
+    margin: -8px;
+}
+
+.head-logo, .foot-logo {
+    font-family: 'Hurricane', cursive;
+}
+
+.head-logo {
+    font-size: 4em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1em;
+}
+
+.login-elipse {
+    width: 3.5em;
+    height: 3.5em;
+    border: solid 1px black;
+    border-radius: 50%;
+    background-image: url("../uploads/assets/hamid-ahmadi-FmmE93R4ZNU-unsplash.jpg");
+    margin: auto 1em;
+}
+
+main {
+    min-height: 100vh;
+    margin: 1em 0;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    border-top: solid 1px lightgray;
+    margin: -8px;
+}
+
+.footer-branding {
+    display: flex;
+    justify-content: center;
+}
+
+.foot-logo {
+    font-size: 2em;
+}
+
+.contact-link {
+    list-style: none;
+}
+
+.contact-link > li {
+    margin: 1em 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+p {
+    font-family: 'Fenix', serif;
+}
+
+
+/* Sidenav menu */
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -250px;
+    background-color: #c4dfaa;
+    padding-top: 60px;
+    transition: left 0.5s ease;
+}
+
+/* Sidenav menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: whitesmoke;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #111;
+}
+
+.sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Active class */
+.sidenav.active {
+    left: 0;
+}
+
+/* Close btn */
+.sidenav .close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+/* Icône burger */
+.burger-icon span {
+    display: block;
+    width: 50px;
+    height: 6px;
+    background-color: black;
+    margin: 6px 1em;
+}
+

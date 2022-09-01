@@ -43,6 +43,15 @@ class Recipe
     #[ORM\Column]
     private array $steps = [];
 
+    #[ORM\Column(length: 255)]
+    private ?string $photo = null;
+
+    #[ORM\Column]
+    private ?bool $is_public = null;
+
+    #[ORM\ManyToOne(inversedBy: 'recipes')]
+    private ?Difficulty $difficulty_id = null;
+
     public function __construct()
     {
         $this->allergen_id = new ArrayCollection();
@@ -182,6 +191,42 @@ class Recipe
     public function setSteps(array $steps): self
     {
         $this->steps = $steps;
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(string $photo): self
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function isIsPublic(): ?bool
+    {
+        return $this->is_public;
+    }
+
+    public function setIsPublic(bool $is_public): self
+    {
+        $this->is_public = $is_public;
+
+        return $this;
+    }
+
+    public function getDifficultyId(): ?Difficulty
+    {
+        return $this->difficulty_id;
+    }
+
+    public function setDifficultyId(?Difficulty $difficulty_id): self
+    {
+        $this->difficulty_id = $difficulty_id;
 
         return $this;
     }

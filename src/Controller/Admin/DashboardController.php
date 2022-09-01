@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Allergens;
 use App\Entity\Diets;
+use App\Entity\Difficulty;
 use App\Entity\Patient;
 use App\Entity\Recipe;
 use App\Entity\User;
@@ -49,6 +50,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Régime','fa-solid fa-carrot', Diets::class);
         yield MenuItem::linkToCrud('Allergènes','fa-solid fa-hand-dots', Allergens::class);
         yield MenuItem::linkToCrud('Recette','fa-solid fa-utensils', Recipe::class);
-
+        yield MenuItem::linkToCrud('Difficulté', 'fa-solid fa-star', Difficulty::class);
     }
 }

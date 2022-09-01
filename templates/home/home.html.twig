@@ -1,0 +1,23 @@
+{% extends 'default/default.html.twig' %}
+
+{% block title%}Sandrine Coupart - Diéteticienne, Nutritionniste{% endblock %}
+
+{% block stylesheets %}
+ <link href="{{ asset('css/default.css') }}" rel="stylesheet" type="text/css"/>
+ <link href="{{ asset('css/home.css') }}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+ <main>
+   <img src="{{ asset('uploads/assets/mobile-brooke-lark-08bOYnH_r_E-unsplash.jpg') }}" alt="welcome background image" class="welcome-img"/>
+  <h2 class="recipe-mainTitle">Recettes</h2>
+  {% for recipe in recipes %}
+   <div class="recipe-wrapper">
+    <h3 class="recipe-title">{{ recipe.title }}</h3>
+    <a href="{{'/recipe'~ recipe.id ~''}}">
+     <img src="{{ asset('uploads/recipe_image/'~ recipe.photo ~'') }}" alt="{{recipe.title}}" class="welcome-img recipe-img"/>
+    </a>
+   </div>
+  {% endfor %}
+ </main>
+{% endblock %}
