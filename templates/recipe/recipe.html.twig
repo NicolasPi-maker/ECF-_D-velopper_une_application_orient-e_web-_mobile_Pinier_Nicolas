@@ -71,9 +71,22 @@
         </section>
         <section>
             <h2 class="recipe-mainTitle">Votre avis compte</h2>
-            {{ form_start(form) }}
-                {{ form_widget(form) }}
-            {{ form_end(form) }}
+            <div class="review-form">
+                {{ form_start(form) }}
+                    <div class="form-field">
+                        {{ form_label(form.note) }}
+                    </div>
+                    <div class="field-input">
+                        {{ form_widget(form.note) }}
+                    </div>
+                    <div class="form-field">
+                        {{ form_label(form.comment) }}
+                    </div>
+                    <div class="field-input comment">
+                        {{ form_widget(form.comment) }}
+                    </div>
+                {{ form_end(form) }}
+            </div>
         </section>
     </main>
 {% endblock %}
