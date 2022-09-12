@@ -1,11 +1,34 @@
-main {
+body {
     margin: -8px;
 }
 
+.welcome-branding {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
 .welcome-img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 95vh;
     display: block;
+    object-fit: cover;
+}
+
+.welcome-text {
+    position: absolute;
+    top: 5%;
+    margin: 1em;
+    font-size: 3em;
+    padding: 0.25em;
+    color: whitesmoke;
+    background-color: #c4dfaa;
+    border-radius: 20px;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+
+.main-image {
+    transform: rotateZ(180deg);
 }
 
 .recipe-wrapper {
@@ -22,7 +45,9 @@ main {
 
 .recipe-title {
     position: absolute;
-    text-shadow: 6px 6px 6px grey;
+    text-shadow: 6px 6px 6px black;
+    top: 5%;
+    left: 5%;
     text-decoration: black;
     margin: 0.5em;
     color: whitesmoke;
@@ -32,12 +57,49 @@ main {
 }
 
 .recipe-img {
-    animation: ease-in 0.2s;
     width: 100%;
     height: auto;
 }
 
 .recipe-img:hover {
     animation: ease-in 0.2s;
-    opacity: 70%;
+    opacity: 90%;
+}
+
+.see-more-link {
+    display: none;
+}
+
+@media screen and (min-width: 1160px) {
+    .recipe-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 0.5em 2em 0.5em;
+    }
+
+    .recipe-title {
+        font-size: 1.5em;
+        margin: 1.25em;
+    }
+
+    .recipe-img {
+        margin: 2em;
+        width: 400px;
+        max-height: 400px;
+        border-radius: 20px;
+    }
+
+    .see-more-link {
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
+        background-color: #c4dfaa;
+        color: whitesmoke;
+        padding: 0.25em 1em;
+        border-radius: 20px;
+        font-family:'Baloo Chettan 2', cursive;
+        font-weight: bold;
+        display: block;
+    }
 }

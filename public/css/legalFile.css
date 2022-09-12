@@ -1,0 +1,56 @@
+.legal-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainTitle {
+    display: flex;
+    justify-content: center;
+    font-size: 4.5em;
+    font-family: 'Baloo Chettan 2', cursive;
+    margin-bottom: 0;
+}
+
+.title-text, .legal-text {
+    font-family: 'Fenix', serif;
+}
+
+.title-text {
+    font-size: 2em;
+    margin: 0;
+}
+
+.legal-text {
+    margin: 10em 2em;
+}
+
+.legal-text > h3 {
+    margin-bottom: 2em;
+}
+
+@media screen and (min-width: 1160px) {
+    main {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        max-width: 75%;
+        margin-bottom: 2em;
+    }
+
+    .legal-title {
+        margin-bottom: 2em;
+    }
+
+    .mainTitle {
+        font-size: 2.5em;
+    }
+
+    .legal-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 1em 0;
+    }
+}

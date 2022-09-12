@@ -9,15 +9,42 @@
 
 {% block content %}
  <main>
-   <img src="{{ asset('uploads/assets/mobile-brooke-lark-08bOYnH_r_E-unsplash.jpg') }}" alt="welcome background image" class="welcome-img"/>
-  <h2 class="recipe-mainTitle">Recettes</h2>
-  {% for recipe in recipes %}
-   <div class="recipe-wrapper">
-    <h3 class="recipe-title">{{ recipe.title }}</h3>
-    <a href="{{'/recipe'~ recipe.id ~''}}">
-     <img src="{{ asset('uploads/recipe_image/'~ recipe.photo ~'') }}" alt="{{recipe.title}}" class="welcome-img recipe-img"/>
-    </a>
-   </div>
-  {% endfor %}
+     <div class="welcome-branding">
+        <img src="{{ asset('uploads/assets/mobile-brooke-lark-08bOYnH_r_E-unsplash.jpg') }}" alt="welcome background image" class="welcome-img main-image"/>
+         <p class="welcome-text">Bienvenue, découvrez mes recettes  👇</p>
+     </div>
+    <h2 class="recipe-mainTitle">Recettes</h2>
+
+   {% if patient %}
+       {% if patientRecipes %}
+       <div class="recipe-container">
+         {% for patientRecipe in patientRecipes %}
+         <div class="recipe-wrapper">
+          <h3 class="recipe-title">{{ patientRecipe.title }}</h3>
+          <a href="{{'/recipe'~ patientRecipe.id ~''}}">
+           <img src="{{ asset('uploads/recipe_image/'~ patientRecipe.photo ~'') }}" alt="{{patientRecipe.title}}" class="welcome-img recipe-img"/>
+          </a>
+         </div>
+         {% endfor %}
+       </div>
+       {% endif %}
+   {% endif %}
+     {% if patient != true %}
+         <div class="recipe-container">
+            {% for recipe in recipes %}
+               {% if recipe.isIsPublic == true %}
+                <div class="recipe-wrapper">
+                 <h3 class="recipe-title">{{ recipe.title }}</h3>
+                 <a href="{{'/recipe'~ recipe.id ~''}}">
+                  <img src="{{ asset('uploads/recipe_image/'~ recipe.photo ~'') }}" alt="{{recipe.title}}" class="welcome-img recipe-img"/>
+                 </a>
+                    <a href="{{'/recipe'~ recipe.id ~''}}" class="see-more-link">
+                        Voir plus
+                    </a>
+                </div>
+                {% endif %}
+            {% endfor %}
+         </div>
+    {% endif %}
  </main>
 {% endblock %}

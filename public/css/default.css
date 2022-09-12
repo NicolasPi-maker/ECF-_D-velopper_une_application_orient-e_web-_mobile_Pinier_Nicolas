@@ -8,13 +8,10 @@
     display: flex;
     width: 100%;
     height: 98vh;
-    margin: 0;
-
 }
 
 header {
     border-bottom: solid 1px lightgray;
-    margin: -8px;
 }
 
 .head-logo, .foot-logo {
@@ -22,7 +19,8 @@ header {
 }
 
 .head-logo {
-    font-size: 4em;
+    font-size: 6em;
+    margin: 0;
 }
 
 nav {
@@ -32,25 +30,41 @@ nav {
     margin: 0 1em;
 }
 
+.nav-links {
+    display: none;
+}
+
 .login-elipse {
-    width: 3.5em;
-    height: 3.5em;
-    border: solid 1px black;
+    transition: ease-in-out 0.2s;
+    width: 5em;
+    height: 5em;
     border-radius: 50%;
-    background-image: url("../uploads/assets/hamid-ahmadi-FmmE93R4ZNU-unsplash.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: auto 1em;
 }
 
+.login-elipse:hover {
+    transition: ease-in-out 0.2s;
+    border: solid 2px #c4dfaa;
+    padding: 0.5em;
+}
+
+.header-branding {
+    position: relative;
+}
+
 main {
-    min-height: 100vh;
-    margin: 1em 0;
+    min-height: 80vh;
+    width: auto;
+    margin: auto;
 }
 
 footer {
     display: flex;
     flex-direction: column;
     border-top: solid 1px lightgray;
-    margin: -8px;
 }
 
 .footer-branding {
@@ -58,8 +72,12 @@ footer {
     justify-content: center;
 }
 
+.footer-branding > p {
+    font-size: 1.5em;
+}
+
 .foot-logo {
-    font-size: 2em;
+    font-size: 3em;
 }
 
 .contact-link {
@@ -68,6 +86,8 @@ footer {
 
 .contact-link > li {
     margin: 1em 0;
+    font-size: 2em;
+    font-family: 'Fenix', serif;
 }
 
 a {
@@ -85,7 +105,7 @@ p {
     height: 100%;
     width: 250px;
     position: fixed;
-    z-index: 1;
+    z-index: 999;
     top: 0;
     left: -250px;
     background-color: #c4dfaa;
@@ -97,20 +117,22 @@ p {
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 2em;
+    font-family: 'Baloo Chettan 2', cursive;
     color: whitesmoke;
     display: block;
     transition: 0.3s;
 }
 
 .sidenav a:hover {
+    transition: ease-in 0.2s;
     color: #111;
 }
 
 .sidenav ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin-top: 2em;
 }
 
 /* Active class */
@@ -123,7 +145,7 @@ p {
     position: absolute;
     top: 0;
     right: 25px;
-    font-size: 36px;
+    font-size: 4em;
 }
 
 /* Icône burger */
@@ -133,5 +155,83 @@ p {
     height: 6px;
     background-color: black;
     margin: 6px 1em;
+}
+
+@media screen and (min-width: 1160px) {
+    .head-logo {
+        font-size: 4em;
+        margin-left: 0.5em;
+    }
+
+    .nav {
+        justify-content: space-between;
+    }
+
+    .link-navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links > li {
+        transition: ease-in-out 0.2s;
+        margin: 0 1.5em;
+        list-style: none;
+        font-size: 1.5em;
+        font-family: 'Baloo Chettan 2', cursive;
+    }
+
+    .nav-links > li > a:hover, .login-elipse:hover {
+        transition: ease-in-out 0.2s;
+        color: #c4dfaa;
+        border-bottom: solid 2px #c4dfaa;
+        padding-bottom: 0.5em;
+    }
+
+    #navigation-menu {
+        display: none;
+    }
+
+    .login-elipse {
+        width: 2.5em;
+        height: 2.5em;
+    }
+
+
+    footer {
+        display: flex;
+        width: 100%;
+        border-top: solid 1px lightgray;
+    }
+
+    .footer-branding > p {
+        font-size: 1em;
+    }
+
+    .foot-logo {
+        font-size: 2em;
+    }
+
+    .footer-title {
+        margin: 0;
+    }
+
+    .contact-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-link > li {
+        margin: 1em 3em;
+        font-size: 1em;
+        font-family: 'Fenix', serif;
+    }
 }
 

@@ -5,8 +5,10 @@ namespace App\Controller\Admin;
 use App\Entity\Allergens;
 use App\Entity\Diets;
 use App\Entity\Difficulty;
+use App\Entity\Message;
 use App\Entity\Patient;
 use App\Entity\Recipe;
+use App\Entity\Review;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -40,16 +42,17 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Back Front');
+            ->setTitle('Tableau de bord');
     }
 
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Patient', 'fa-solid fa-business-time');
         yield MenuItem::linkToCrud('Utilisateurs','fa-solid fa-user', User::class);
+        yield MenuItem::linkToCrud('Messages', 'fa-solid fa-envelope', Message::class);
+        yield MenuItem::linkToCrud('Recette','fa-solid fa-utensils', Recipe::class);
         yield MenuItem::linkToCrud('Régime','fa-solid fa-carrot', Diets::class);
         yield MenuItem::linkToCrud('Allergènes','fa-solid fa-hand-dots', Allergens::class);
-        yield MenuItem::linkToCrud('Recette','fa-solid fa-utensils', Recipe::class);
-        yield MenuItem::linkToCrud('Difficulté', 'fa-solid fa-star', Difficulty::class);
+        yield MenuItem::linkToCrud('Avis', 'fa-solid fa-star', Review::class);
     }
 }

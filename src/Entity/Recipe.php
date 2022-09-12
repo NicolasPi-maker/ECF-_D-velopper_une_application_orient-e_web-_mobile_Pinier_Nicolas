@@ -43,7 +43,7 @@ class Recipe
     #[ORM\Column]
     private array $steps = [];
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $photo = null;
 
     #[ORM\Column]
@@ -52,10 +52,14 @@ class Recipe
     #[ORM\ManyToOne(inversedBy: 'recipes')]
     private ?Difficulty $difficulty_id = null;
 
+    #[ORM\OneToMany(mappedBy: 'recipe_id', targetEntity: Review::class)]
+    private Collection $reviews;
+
     public function __construct()
     {
         $this->allergen_id = new ArrayCollection();
         $this->diet_id = new ArrayCollection();
+        $this->reviews = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -227,6 +231,36 @@ class Recipe
     public function setDifficultyId(?Difficulty $difficulty_id): self
     {
         $this->difficulty_id = $difficulty_id;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Review>
+     */
+    public function getReviews(): Collection
+    {
+        return $this->reviews;
+    }
+
+    public function addReview(Review $review): self
+    {
+        if (!$this->reviews->contains($review)) {
+            $this->reviews->add($review);
+            $review->setRecipeId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReview(Review $review): self
+    {
+        if ($this->reviews->removeElement($review)) {
+            // set the owning side to null (unless already changed)
+            if ($review->getRecipeId() === $this) {
+                $review->setRecipeId(null);
+            }
+        }
 
         return $this;
     }

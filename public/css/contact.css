@@ -1,0 +1,124 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.mainTitle {
+    color: #c4dfaa;
+    font-size: 4em;
+    font-family: 'Baloo Chettan 2', cursive;
+    margin-bottom: 1em;
+}
+
+.form-wrapper {
+    width: 100%;
+    margin: 2em;
+}
+
+
+.form-field {
+    max-width: 100%;
+    margin: 2em;
+}
+
+.field-label {
+    align-items: flex-start;
+    font-size: 3em;
+    margin: 0.5em;
+    color: #2f3542;
+    font-family: 'Fenix', serif;
+}
+
+.field-input {
+    border-radius: 20px;
+    font-family: 'Fenix', serif;
+    border-color: lightgray;
+    padding: 0.5em;
+    font-size: 1.75em;
+}
+
+.field-input > * {
+    width: 100%;
+    border-radius: 20px;
+    border-color: lightgray;
+    font-size: 1em;
+    padding: 0.75em 0;
+}
+
+.message-input > * {
+    height: 10em;
+    resize: none;
+    padding: 0.5em;
+}
+
+.button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-button {
+    transition: linear 0.2s;
+    width: 90%;
+    padding: 0.25em;
+    margin: 1em 2em;
+    background-color: #c4dfaa;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.form-button:hover {
+    opacity: 0.8;
+}
+
+@media screen and (min-width: 1160px) {
+
+    .mainTitle {
+        font-size: 2.5em;
+    }
+
+    .form-wrapper {
+        width: 50%;
+    }
+
+    .form-field {
+        max-width: 100%;
+    }
+
+    .field-label {
+        font-size: 1.5em;
+        color: #2f3542;
+    }
+
+    .field-input > * {
+        width: 100%;
+        border-radius: 20px;
+        border-color: lightgray;
+        font-size: 0.6em;
+        padding: 0.6em;
+    }
+
+    .message-input > * {
+        padding: 0.75em;
+    }
+
+    .button-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .form-button {
+        transition: linear 0.2s;
+        width: 15%;
+        padding: 1em;
+        font-size: 1em;
+    }
+}

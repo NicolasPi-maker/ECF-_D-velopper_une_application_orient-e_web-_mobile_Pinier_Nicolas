@@ -63,4 +63,13 @@ class RecipeRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+    public function  findAllPatientRecipe()
+    {
+      return $this->getEntityManager()->createQuery("
+              SELECT r, al, p FROM App\Entity\Recipe
+              JOIN patient.allergen_id
+              WHERE al.id = 
+            ")
+        ->getResult();
+    }
 }

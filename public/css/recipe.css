@@ -1,17 +1,26 @@
+body {
+    margin: 0;
+}
+
 main {
-    margin: -8px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .recipe-mainTitle {
     display: flex;
     justify-content: center;
     color: #c4dfaa;
-    font-size: 3.5em;
+    font-size: 4.5em;
     font-family: 'Baloo Chettan 2', cursive;
 }
 
 .welcome-img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
 }
@@ -56,7 +65,18 @@ h3 {
     margin-bottom: 0;
 }
 
-.recipe-info {
+.info-wrapper {
+    margin: 0 4em;
+}
+
+.info-container > h3 {
+    font-size: 3.5em;
+}
+
+.info-container > p {
+    font-size: 2.60em;
+}
+.recipe-info > * {
     margin: 0 2em;
     text-align: justify;
     font-size: 2em;
@@ -65,24 +85,298 @@ h3 {
 .review-form {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .form-field {
     display: flex;
     flex-direction: column;
-    width: 30em;
+    width: 50em;
+}
+
+.field-label, .field-input > * {
+    font-size: 3em;
+    font-family: 'Fenix', serif;
 }
 
 .field-input > * {
     height: 2em;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-top: 1em;
-    color: #70a1ff;
-    font-weight: 700;
+    font-size: 2em;
     margin-bottom: 2em;
 }
 
 .comment > * {
     height: 15em;
+}
+
+.button-wrapper {
+    align-items: center;
+}
+
+.form-button {
+    transition: linear 0.2s;
+    width: 15em;
+    padding: 0.5em;
+    background-color: #c4dfaa;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 2em 0;
+}
+
+.form-button:hover {
+    opacity: 0.8;
+    padding-left: 2em;
+}
+
+.note-bubble {
+    display: flex;
+    position: relative;
+}
+
+.review-container {
+    margin: 2em;
+}
+
+.review-wrapper {
+    display: flex;
+    justify-content: space-between;
+    min-width: 90%;
+    border-bottom: solid 1px black;
+    padding: 0.5em;
+    margin: 2em;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    display: block;
+    cursor: pointer;
+}
+
+.rating label:before {
+    content: '';
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-right: 1em;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: solid 1px black;
+    background-color: whitesmoke;
+}
+
+.rating label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    margin-right: 1em;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: solid 1px black;
+    background-color: #c4dfaa;
+    opacity: 0;
+    transition: .5s;
+    text-shadow: 0 2px 5px rgba(0,0,0,.5);
+}
+
+.rating label:hover:after, .rating input:checked~label:after {
+    opacity: 1;
+}
+
+#empty-review {
+    display: flex;
+    justify-content: center;
+    margin: 2em;
+    font-size: 2em;
+    font-family: 'Fenix', serif;
+}
+
+.patient-review {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Fenix', serif;
+}
+
+.review-date {
+    display: flex;
+    align-items: baseline;
+    font-size: 2em;
+}
+
+.review-date > * {
+    margin-right: 1em;
+}
+
+.review-comment {
+    font-size: 2em;
+}
+
+
+.review-note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 1.5em;
+    min-width: 1.5em;
+    font-size: 3em;
+    margin: 0.5em 1em;
+    background-color: #c4dfaa;
+    border-radius: 50%;
+    color: whitesmoke;
+    font-family: 'Baloo Chettan 2', cursive;
+}
+
+@media screen and (min-width: 1160px) {
+
+    .image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .photo-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 2em;
+    }
+
+    .recipe-reviewAverage {
+        top: 20px;
+        left: 20px;
+    }
+
+    .recipe-img {
+        display: flex;
+        width: 650px;
+        max-height: 650px;
+        border-radius: 20px;
+        margin: 2em;
+    }
+
+    .recipe-mainTitle {
+        margin: 0;
+    }
+
+    .quick-info-container {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .time {
+        font-size: 2em;
+        margin-right: 2em;
+        margin-left: 1em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    .info-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .allergen-infos, .diet-infos {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .allergen-text, .diet-text {
+        margin: 0 1em;
+    }
+
+    .main-info-wrapper {
+        margin: 0;
+    }
+
+    .main-info-wrapper > p {
+        font-size: 1em;
+    }
+
+    .info-container > h3 {
+        font-size: 2em;
+    }
+
+    .info-container > p {
+        font-size: 2em;
+    }
+
+    .review-form-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 6em 0;
+        width: 100%;
+    }
+
+    .review-form {
+        width: 90%;
+    }
+
+    .form-field {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .field-label, .field-input > * {
+        font-family: 'Fenix', serif;
+    }
+
+    .field-input > * {
+        height: 1.5em;
+        width: 100%;
+        border-radius: 20px;
+        margin-top: 1em;
+        padding: 0.5em;
+        font-size: 1.25em;
+    }
+
+    .rating label:before, .rating label:after {
+        height: 30px;
+        width: 30px;
+    }
+
+    .comment > * {
+        height: 10em;
+        resize: none;
+    }
+
+    .button-wrapper {
+        align-items: flex-end;
+    }
+
+    .form-button {
+        transition: linear 0.2s;
+        width: 7.5em;
+        font-size: 1.5em;
+        margin: 0;
+    }
 }

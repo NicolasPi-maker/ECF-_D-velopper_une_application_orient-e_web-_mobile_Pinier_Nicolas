@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Patient;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -14,6 +15,11 @@ class PatientCrudController extends AbstractCrudController
         return Patient::class;
     }
 
+    public function configureCrud(Crud $crud): Crud
+    {
+      $crud->setPageTitle('new', 'Créer le profil d\'un patient' );
+      return $crud->setPageTitle('index', 'Patients' );
+    }
 
     public function configureFields(string $pageName): iterable
     {

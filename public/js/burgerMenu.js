@@ -1,9 +1,7 @@
 let sidenav = document.getElementById("mySidenav");
 let openBtn = document.getElementById("openBtn");
 let closeBtn = document.getElementById("closeBtn");
-
-openBtn.onclick = openNav;
-closeBtn.onclick = closeNav;
+let selectedBubble = document.getElementById("")
 
 /* Set the width of the side navigation to 250px */
 function openNav() {
@@ -14,3 +12,8 @@ function openNav() {
 function closeNav() {
     sidenav.classList.remove("active");
 }
+
+openBtn.onclick = openNav;
+closeBtn.onclick = closeNav;
+
+

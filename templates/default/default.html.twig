@@ -7,33 +7,51 @@
 {% endblock %}
 
 {% block body %}
- <header>
-     <nav>
-         <div id="mySidenav" class="sidenav">
-             <a id="closeBtn" href="#" class="close">×</a>
-             <ul>
-                 <li><a href="#">Mes services</a></li>
-                 <li><a href="#">A propos</a></li>
-                 <li><a href="#">Contact</a></li>
-             </ul>
-         </div>
+     <header>
+         <nav>
+             <div id="navigation-menu">
+                 <div id="mySidenav" class="sidenav">
+                     <a id="closeBtn" href="#" class="close">×</a>
+                     <ul>
+                         <li><a href="/">Accueil</a></li>
+                         <li><a href="/about">A propos</a></li>
+                         <li><a href="/contact">Contact</a></li>
+                         {% if app.user %}
+                             <li><a href="{{ path('app_logout') }}">Deconnexion</a></li>
+                         {% endif %}
+                     </ul>
+                 </div>
 
-         <a href="#" id="openBtn">
-          <span class="burger-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-         </a>
-         <a href="/">
-             <h1 class="head-logo">Sandrine Coupart</h1>
-         </a>
+                 <a href="#" id="openBtn">
+                  <span class="burger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </span>
+                 </a>
+             </div>
 
-         <a href="/login">
-             <div class="login-elipse"></div>
-         </a>
-     </nav>
- </header>
+             <a href="/">
+                 <h1 class="head-logo">Sandrine Coupart</h1>
+             </a>
+
+             <div class="link-navbar">
+                 <ul class="nav-links">
+                     <li><a href="/">Mes services</a></li>
+                     <li><a href="/about">A propos</a></li>
+                     <li><a href="/contact">Contact</a></li>
+                     {% if app.user %}
+                        <li><a href="{{ path('app_logout') }}">Deconnexion</a></li>
+                     {% endif %}
+                 </ul>
+                 <a href="/login">
+                     <div class="login-elipse">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="5em" height="5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path fill="currentColor" d="M16 8a5 5 0 1 0 5 5a5 5 0 0 0-5-5Z"/><path fill="currentColor" d="M16 2a14 14 0 1 0 14 14A14.016 14.016 0 0 0 16 2Zm7.992 22.926A5.002 5.002 0 0 0 19 20h-6a5.002 5.002 0 0 0-4.992 4.926a12 12 0 1 1 15.985 0Z"/></svg>
+                     </div>
+                 </a>
+             </div>
+         </nav>
+     </header>
     <main>
         {% block content%}{% endblock%}
     </main>
@@ -45,10 +63,10 @@
         </div>
         <div class="footer-contact-link">
             <ul class="contact-link">
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">A Propos</a></li>
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="#">Politique de confidentialité</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/about">A Propos</a></li>
+                <li><a href="/legal_notices">Mentions légales</a></li>
+                <li><a href="/privacy_policy">Politique de confidentialité</a></li>
             </ul>
         </div>
         <div class="footer-branding">
@@ -56,7 +74,7 @@
         </div>
     </footer>
     {% block javascripts %}
-        <script src="{{asset('js/burgerMenu.js') }}"></script>
+        <script src="{{ asset('js/burgerMenu.js') }}"></script>
     {% endblock %}
 {% endblock %}
 

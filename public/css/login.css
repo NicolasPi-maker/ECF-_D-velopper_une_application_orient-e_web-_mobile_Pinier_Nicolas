@@ -1,0 +1,114 @@
+main {
+    position: relative;
+    background-image: url("../uploads/assets/mobile-brooke-lark-08bOYnH_r_E-unsplash.jpg");
+    background-size: cover;
+    margin: -8px;
+    min-height: 90vh;
+}
+
+.form-wrapper {
+    display: flex;
+    min-height: 95vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mainTitle {
+    color: #c4dfaa;
+    font-size: 6em;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-weight: bold;
+    margin-bottom: 2em;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-field {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90vw;
+    margin-bottom: 5em;
+}
+
+.form-label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    font-size: 3em;
+    font-family: 'Fenix', serif;
+    color: whitesmoke;
+}
+
+.form-field > input {
+    height: 1.5em;
+    border-radius: 20px;
+    border: none;
+    margin-top: 1em;
+    width: 100%;
+    font-size: 3em;
+}
+
+.form-button {
+    transition: linear 0.2s;
+    width: 15em;
+    padding: 0.25em;
+    margin-bottom: 2em;
+    background-color: #c4dfaa;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.form-button:hover {
+    opacity: 0.8;
+}
+
+@media screen and (min-width: 1160px) {
+
+    .mainTitle {
+        margin-bottom: 1em;
+    }
+
+    .form-field {
+        width: 100%;
+    }
+
+    .form-field > input {
+        height: 1.5em;
+        font-family: 'Fenix', serif;
+        max-width: 100%;
+        font-size: 1em;
+        margin-top: 0.5em;
+    }
+
+
+    .form-label {
+        max-width: 100%;
+        font-size: 1.25em;
+        font-family: 'Fenix', serif;
+        z-index: 1;
+        color: black;
+    }
+
+    .form-button {
+        min-width: 10%;
+        padding: 0.5em;
+        margin-bottom: 20em;
+        background-color: #c4dfaa;
+        border: none;
+        border-radius: 30px;
+        color: white;
+        font-size: 1em;
+        font-weight: bold;
+    }
+}

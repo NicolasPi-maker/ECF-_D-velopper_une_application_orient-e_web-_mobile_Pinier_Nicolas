@@ -1,0 +1,31 @@
+{% extends 'default/default.html.twig' %}
+
+{% block title%}A proppos de moi{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/default.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('css/about.css') }}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="img-wrapper">
+            <img src="{{ asset('uploads/assets/linkedin-sales-solutions-Mis5fyJi7Q0-unsplash.jpg') }}" alt="welcome background image" class="welcome-img main-image"/>
+            <h2 class="mainTitle">A propos de moi</h2>
+        </div>
+        <section class="content-wrapper">
+            <div class="info-wrapper">
+                <h3>Lorem ipsum</h3>
+                <p class="about-info">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque libero mi, suscipit eu quam et, semper sollicitudin felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tempus rhoncus ex, eget congue libero pretium vitae.
+                </p>
+            </div>
+            <div class="info-wrapper">
+                <h3>Lorem ipsum</h3>
+                <p class="about-info">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque libero mi, suscipit eu quam et, semper sollicitudin felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec tempus rhoncus ex, eget congue libero pretium vitae.
+                </p>
+            </div>
+        </section>
+    </main>
+{% endblock %}

@@ -63,4 +63,27 @@ class ReviewRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+      public function findAllByRecipe($recipeId)
+      {
+        return $this->createQueryBuilder('r')
+          ->select('r, p')
+          ->join('r.patient_id', 'p')
+          ->where('r.recipe_id = :recipeId')
+          ->setParameter('recipeId', $recipeId)
+          ->orderBy('r.postDate', 'DESC')
+          ->getQuery()
+          ->getArrayResult();
+      }
+
+      public function getRecipeReviewAverage($recipeId)
+      {
+        return $this->createQueryBuilder('r')
+          ->select('AVG(r.note)')
+          ->where('r.recipe_id = :recipeId')
+          ->setParameter('recipeId', $recipeId)
+          ->getQuery()
+          ->getOneOrNullResult()
+          ;
+      }
 }
