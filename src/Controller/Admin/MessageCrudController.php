@@ -23,7 +23,7 @@ class MessageCrudController extends AbstractCrudController
 
     public function configureCrud(Crud $crud): Crud
     {
-      return $crud->setPageTitle('index', 'Méssages' );
+      return $crud->setPageTitle('index', 'Messages' );
     }
 
     /*

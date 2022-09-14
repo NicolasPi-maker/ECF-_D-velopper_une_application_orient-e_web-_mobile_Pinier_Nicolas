@@ -18,7 +18,8 @@ class ReviewCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
       return $actions
-        ->remove(Crud::PAGE_INDEX, Action::NEW);
+        ->remove(Crud::PAGE_INDEX, Action::NEW)
+        ->remove(Crud::PAGE_INDEX, Action::EDIT);
     }
 
     public function configureCrud(Crud $crud): Crud

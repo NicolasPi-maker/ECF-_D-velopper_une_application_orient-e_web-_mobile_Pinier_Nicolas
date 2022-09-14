@@ -24,11 +24,11 @@ class PatientCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('name'),
-            TextField::new('lastName'),
-            AssociationField::new('allergen_id'),
-            AssociationField::new('diet_id'),
-            AssociationField::new('patient_user_id'),
+            TextField::new('name', 'Nom'),
+            TextField::new('lastName','Prénom'),
+            AssociationField::new('allergen_id','Nombre d\'allergènes'),
+            AssociationField::new('diet_id', 'Nombre de régimes'),
+            AssociationField::new('patient_user_id', 'Adresse email de l\'utilisateur'),
 
         ];
     }

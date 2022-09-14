@@ -16,7 +16,7 @@ class AllergensCrudController extends AbstractCrudController
 
     public function configureCrud(Crud $crud): Crud
     {
-      $crud->setPageTitle('new', 'nouvel allergène' );
+      $crud->setPageTitle('new', 'Nouvel allergène' );
       return $crud->setPageTitle('index', 'Allergènes' );
     }
 
