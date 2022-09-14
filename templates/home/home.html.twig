@@ -24,6 +24,9 @@
           <a href="{{'/recipe'~ patientRecipe.id ~''}}">
            <img src="{{ asset('uploads/recipe_image/'~ patientRecipe.photo ~'') }}" alt="{{patientRecipe.title}}" class="welcome-img recipe-img"/>
           </a>
+         <a href="{{'/recipe'~ patientRecipe.id ~''}}" class="see-more-link">
+             Voir plus
+         </a>
          </div>
          {% endfor %}
        </div>

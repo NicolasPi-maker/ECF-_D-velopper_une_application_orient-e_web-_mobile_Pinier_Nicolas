@@ -16,7 +16,7 @@ class UserCrudController extends AbstractCrudController
   public function configureCrud(Crud $crud): Crud
   {
     $crud->setPageTitle('index', 'Liste des utilisateurs');
-    return $crud->setPageTitle('new', 'Créer un utilisateur (n\'oubliez pas de créer le patient associé');
+    return $crud->setPageTitle('new', 'Créer un utilisateur (n\'oubliez pas de créer le patient associé)');
   }
 
     /*

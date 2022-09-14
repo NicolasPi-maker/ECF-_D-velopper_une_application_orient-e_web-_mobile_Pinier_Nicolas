@@ -24,6 +24,11 @@ class MessageController extends AbstractController
       $entityManager = $doctrine->getManager();
       $entityManager->persist($message);
       $entityManager->flush();
+
+      unset($message);
+      unset($form);
+      $message = new Message();
+      $form = $this->createForm(MessageType::class, $message);
     }
 
     return $this->render('message/message.html.twig', [

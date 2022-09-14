@@ -34,8 +34,10 @@ class DefaultController extends AbstractController
 
     if($this->getUser() && $this->getUser()->getRoles() === ['ROLE_USER']) {
       $currentUser = $this->getCurrentPatient();
-      if($this->dietRecipeFilter() && $currentUser !== null) {
-        $patientRecipes = $this->dietRecipeFilter();
+      if($currentUser !== null) {
+        if($this->dietRecipeFilter()) {
+          $patientRecipes = $this->dietRecipeFilter();
+        }
       }
     }
 
@@ -85,6 +87,11 @@ class DefaultController extends AbstractController
 
       $reviews = $reviewRepository->findAllByRecipe($slug);
       $recipeAVG = ($reviewRepository->getRecipeReviewAverage($slug));
+
+      unset($review);
+      unset($form);
+      $review = new Review();
+      $form = $this->createForm(ReviewType::class, $review);
     }
 
       return $this->render('recipe/recipe.html.twig', [

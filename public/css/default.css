@@ -99,6 +99,10 @@ p {
     font-family: 'Fenix', serif;
 }
 
+.success-flash.close {
+    display: none;
+}
+
 
 /* Sidenav menu */
 .sidenav {
