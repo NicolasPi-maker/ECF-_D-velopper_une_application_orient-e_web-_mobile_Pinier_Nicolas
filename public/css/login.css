@@ -54,6 +54,7 @@ main {
     margin-top: 1em;
     width: 100%;
     font-size: 3em;
+    padding: 0.25em;
 }
 
 .form-button {
