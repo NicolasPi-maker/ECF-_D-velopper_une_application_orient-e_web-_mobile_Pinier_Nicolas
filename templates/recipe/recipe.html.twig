@@ -125,7 +125,7 @@
                         <div>
                             <div class="review-date">
                                 <h4>{{ review.patient_id.name }} {{ review.patient_id.lastName }}</h4>
-                                <p> "{{review.postDate|date("d M Y", "Europe/Paris") }}"</p>
+                                <p> "{{review.postDate|date("d M Y (H:i)", "Europe/Paris") }}"</p>
                             </div>
                             <p class="review-comment">{{ review.comment }}</p>
                         </div>
