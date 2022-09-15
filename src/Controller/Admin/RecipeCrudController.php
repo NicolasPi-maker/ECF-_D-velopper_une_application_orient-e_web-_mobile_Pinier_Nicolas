@@ -37,8 +37,6 @@ class RecipeCrudController extends AbstractCrudController
             TimeField::new('setup_time', 'Temps de préparation'),
             TimeField::new('rest_time', 'Temps de repos'),
             TimeField::new('cooking_time', 'Temps de cuisson'),
-            ArrayField::new('Steps', 'Etapes'),
-            ArrayField::new('ingredients'),
             AssociationField::new('allergen_id', 'Nombre d\'allergènes'),
             AssociationField::new('diet_id', 'Nombre de régime compatible'),
             BooleanField::new('is_public', 'Réservée aux patients/Recette publique'),
