@@ -321,6 +321,10 @@ h3 {
         font-size: 1em;
     }
 
+    .info-container {
+        max-width: 80%;
+    }
+
     .info-container > h3 {
         font-size: 2em;
     }
