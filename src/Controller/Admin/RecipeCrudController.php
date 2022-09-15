@@ -23,6 +23,7 @@ class RecipeCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
       $crud->setPageTitle('new', 'Créer une recette' );
+      $crud->setPageTitle('edit', 'Modifier la recette');
       return $crud->setPageTitle('index', 'Recettes' );
     }
 
