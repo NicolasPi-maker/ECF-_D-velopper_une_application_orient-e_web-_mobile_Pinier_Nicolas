@@ -32,7 +32,7 @@ class DefaultController extends AbstractController
     $patientRecipes = [];
 
 
-    if($this->getUser() && $this->getUser()->getRoles() === ['ROLE_USER']) {
+    if($this->getUser() && $this->getUser()->getRoles() === ['ROLE_USER'] || $this->getUser()->getRoles() === [] ) {
       $currentUser = $this->getCurrentPatient();
       if($currentUser !== null) {
         if($this->dietRecipeFilter()) {
