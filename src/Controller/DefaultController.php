@@ -137,6 +137,8 @@ class DefaultController extends AbstractController
             if((($key = array_search($recipe, $allergenRecipes)) !== false)) {
               unset($allergenRecipes[$key]);
               dump($allergenRecipes);
+            } else {
+              return $allergenRecipes;
             }
           }
         }
