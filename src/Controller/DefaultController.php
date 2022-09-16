@@ -130,9 +130,11 @@ class DefaultController extends AbstractController
           dump($patientAllergen);
           if(!in_array($patientAllergen->getName(), $currentAllergens) && !in_array($recipe, $allergenRecipes)) {
             $allergenRecipes[] = $recipe;
+            dump('insert');
             dump($allergenRecipes);
           } elseif (($key = array_search($recipe, $allergenRecipes)) !== false) {
             unset($allergenRecipes[$key]);
+            dump('unset');
             dump($allergenRecipes);
           }
         }
