@@ -36,7 +36,6 @@ class DefaultController extends AbstractController
       $currentUser = $this->getCurrentPatient();
       if($currentUser !== null) {
         if($this->dietRecipeFilter()) {
-          dump('ça passe');
           $patientRecipes = $this->dietRecipeFilter();
         }
       }
@@ -128,10 +127,13 @@ class DefaultController extends AbstractController
           $currentAllergens[] = $allergen->getName();
         }
         foreach($this->getCurrentPatient()->getAllergenId() as $patientAllergen) {
+          dump($patientAllergen);
           if(!in_array($patientAllergen->getName(), $currentAllergens) && !in_array($recipe, $allergenRecipes)) {
             $allergenRecipes[] = $recipe;
+            dump($allergenRecipes);
           } elseif (($key = array_search($recipe, $allergenRecipes)) !== false) {
             unset($allergenRecipes[$key]);
+            dump($allergenRecipes);
           }
         }
       } else {
