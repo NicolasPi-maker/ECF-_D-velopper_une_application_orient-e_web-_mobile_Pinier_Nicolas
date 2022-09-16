@@ -36,6 +36,7 @@ class DefaultController extends AbstractController
       $currentUser = $this->getCurrentPatient();
       if($currentUser !== null) {
         if($this->dietRecipeFilter()) {
+          dump('ça passe');
           $patientRecipes = $this->dietRecipeFilter();
         }
       }
