@@ -132,10 +132,12 @@ class DefaultController extends AbstractController
             $allergenRecipes[] = $recipe;
             dump($allergenRecipes);
             dump('insert');
-          } elseif (($key = array_search($recipe, $allergenRecipes)) !== false) {
-            unset($allergenRecipes[$key]);
+          } else  {
             dump('unset');
-            dump($allergenRecipes);
+            if((($key = array_search($recipe, $allergenRecipes)) !== false)) {
+              unset($allergenRecipes[$key]);
+              dump($allergenRecipes);
+            }
           }
         }
       } else {
