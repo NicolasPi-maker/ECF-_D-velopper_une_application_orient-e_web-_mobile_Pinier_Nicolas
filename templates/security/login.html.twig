@@ -20,6 +20,9 @@
             #}
             <div class="input-wrapper">
                 <h1 class="mainTitle">Connexion</h1>
+                {% if error %}
+                    <div class="wrong-login">L'identifiant ou le mot de passe est incorrect</div>
+                {% endif %}
                 <div class="form-field">
                     <div class="form-label">
                         <label for="inputEmail">Adresse email</label>
@@ -34,9 +37,6 @@
                     <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
                 </div>
 
-                {% if error %}
-                    <div class="wrong-login">L'identifiant ou le mot de passe est incorrect</div>
-                {% endif %}
                 <input type="hidden" name="_csrf_token"
                        value="{{ csrf_token('authenticate') }}"
                 >
