@@ -31,8 +31,9 @@ class DefaultController extends AbstractController
     $currentUser = null;
     $patientRecipes = [];
 
-
+    # Check if an user is connected and is not an admin
     if($this->getUser() && $this->getUser()->getRoles() === ['ROLE_USER']) {
+      # Check if the current user have a patient profile
       $currentUser = $this->getCurrentPatient();
       if($currentUser !== null) {
         if($this->dietRecipeFilter()) {
@@ -70,8 +71,6 @@ class DefaultController extends AbstractController
 
     $form = $this->createForm(ReviewType::class, $review);
     $form->handleRequest($request);
-
-
 
     if($form->isSubmitted() && $form->isSubmitted()) {
 
@@ -121,15 +120,17 @@ class DefaultController extends AbstractController
 
     foreach($this->getRecipes() as $recipe) {
       $currentAllergens = [];
-
+      # add recipe in $allergenRecipes if patient do not have any allergens
       if($this->getCurrentPatient()->getAllergenId()[0] !== null) {
           foreach($recipe->getAllergenId() as $allergen) {
             $currentAllergens[] = $allergen->getName();
           }
           foreach($this->getCurrentPatient()->getAllergenId() as $patientAllergen) {
+            # filter recipe depends of patient allergens and recipe allergens
             if(!in_array($patientAllergen->getName(), $currentAllergens) && !in_array($recipe, $allergenRecipes)) {
               $allergenRecipes[] = $recipe;
             } else  {
+              # unset recipe if current patient allergen is found in $currentAllergens array
               if((($key = array_search($recipe, $allergenRecipes)) !== false)) {
                 unset($allergenRecipes[$key]);
               }
@@ -153,8 +154,10 @@ class DefaultController extends AbstractController
       foreach ($recipe->getDietId() as $diet) {
         $currentDiets[] = $diet->getName();
       }
+      # add recipe in $dietRecipes if patient do not have any diet
       if($this->getCurrentPatient()->getDietID()[0] !== null) {
         foreach ($this->getCurrentPatient()->getDietId() as $patientDiet) {
+          # filter recipe depends of patient diets and recipe diets
           if(in_array($patientDiet->getName(), $currentDiets) && !in_array($recipe, $dietRecipes)) {
             $dietRecipes[] = $recipe;
           }
