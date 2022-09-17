@@ -11,9 +11,6 @@
 <main>
     <form method="post">
         <section class="form-wrapper">
-            {% if error %}
-                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-            {% endif %}
             {#
                 {% if app.user %}
                     <div class="mb-3">
@@ -37,6 +34,9 @@
                     <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
                 </div>
 
+                {% if error %}
+                    <div class="wrong-login">L'identifiant ou le mot de passe est incorrect</div>
+                {% endif %}
                 <input type="hidden" name="_csrf_token"
                        value="{{ csrf_token('authenticate') }}"
                 >
