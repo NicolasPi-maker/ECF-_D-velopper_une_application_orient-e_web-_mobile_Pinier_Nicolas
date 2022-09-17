@@ -122,20 +122,20 @@ class DefaultController extends AbstractController
     foreach($this->getRecipes() as $recipe) {
       $currentAllergens = [];
 
-      if($recipe->getAllergenId()[0] !== null) {
-        foreach($recipe->getAllergenId() as $allergen) {
-          $currentAllergens[] = $allergen->getName();
-        }
-        foreach($this->getCurrentPatient()->getAllergenId() as $patientAllergen) {
-          if(!in_array($patientAllergen->getName(), $currentAllergens) && !in_array($recipe, $allergenRecipes)) {
-            $allergenRecipes[] = $recipe;
-          } else  {
-            if((($key = array_search($recipe, $allergenRecipes)) !== false)) {
-              unset($allergenRecipes[$key]);
+      if($this->getCurrentPatient()->getAllergenId()[0] !== null) {
+          foreach($recipe->getAllergenId() as $allergen) {
+            $currentAllergens[] = $allergen->getName();
+          }
+          foreach($this->getCurrentPatient()->getAllergenId() as $patientAllergen) {
+            if(!in_array($patientAllergen->getName(), $currentAllergens) && !in_array($recipe, $allergenRecipes)) {
+              $allergenRecipes[] = $recipe;
+            } else  {
+              if((($key = array_search($recipe, $allergenRecipes)) !== false)) {
+                unset($allergenRecipes[$key]);
+              }
             }
           }
-        }
-      } else {
+        } else {
         $allergenRecipes[] = $recipe;
       }
     }
