@@ -22,7 +22,7 @@ class Patient
     #[ORM\Column(length: 60)]
     private ?string $lastName = null;
 
-    #[ORM\ManyToOne(inversedBy: 'patients')]
+    #[ORM\ManyToOne(cascade: ["remove"], inversedBy: 'patients')]
     private ?User $patient_user_id = null;
 
     #[ORM\OneToMany(mappedBy: 'patient_id', targetEntity: Review::class)]
