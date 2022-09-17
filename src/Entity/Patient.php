@@ -28,10 +28,10 @@ class Patient
     #[ORM\OneToMany(mappedBy: 'patient_id', targetEntity: Review::class, cascade: ["remove"])]
     private Collection $reviews;
 
-    #[ORM\ManyToMany(targetEntity: Allergens::class, inversedBy: 'patients', cascade: ["remove"])]
+    #[ORM\ManyToMany(targetEntity: Allergens::class, inversedBy: 'patients')]
     private Collection $allergen_id;
 
-    #[ORM\ManyToMany(targetEntity: Diets::class, inversedBy: 'patients', cascade: ["remove"])]
+    #[ORM\ManyToMany(targetEntity: Diets::class, inversedBy: 'patients')]
     private Collection $diet_id;
 
     public function __construct()
