@@ -61,14 +61,16 @@ main {
     margin: auto;
 }
 
-footer {
+footer, .footer-branding {
     display: flex;
+}
+
+footer {
     flex-direction: column;
     border-top: solid 1px lightgray;
 }
 
 .footer-branding {
-    display: flex;
     justify-content: center;
 }
 
@@ -87,7 +89,6 @@ footer {
 .contact-link > li {
     margin: 1em 0;
     font-size: 2em;
-    font-family: 'Fenix', serif;
 }
 
 a {
@@ -95,7 +96,7 @@ a {
     text-decoration: none;
 }
 
-p {
+p, .contact-link > li {
     font-family: 'Fenix', serif;
 }
 
@@ -171,13 +172,7 @@ p {
         justify-content: space-between;
     }
 
-    .link-navbar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .nav-links {
+    .link-navbar, .nav-links, .contact-link {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -224,12 +219,6 @@ p {
 
     .footer-title {
         margin: 0;
-    }
-
-    .contact-link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .contact-link > li {

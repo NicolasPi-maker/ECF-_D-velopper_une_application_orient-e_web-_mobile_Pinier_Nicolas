@@ -13,15 +13,13 @@ main {
     margin-bottom: 1em;
 }
 
-.form-wrapper {
+.form-wrapper, .form-field {
     width: 100%;
     margin: 2em;
 }
 
-
-.form-field {
-    max-width: 100%;
-    margin: 2em;
+.field-label, .field-input {
+    font-family: 'Fenix', serif;
 }
 
 .field-label {
@@ -29,12 +27,10 @@ main {
     font-size: 3em;
     margin: 0.5em;
     color: #2f3542;
-    font-family: 'Fenix', serif;
 }
 
 .field-input {
     border-radius: 20px;
-    font-family: 'Fenix', serif;
     border-color: lightgray;
     padding: 0.5em;
     font-size: 1.75em;
@@ -98,9 +94,6 @@ main {
     }
 
     .field-input > * {
-        width: 100%;
-        border-radius: 20px;
-        border-color: lightgray;
         font-size: 0.6em;
         padding: 0.6em;
     }
@@ -116,7 +109,6 @@ main {
     }
 
     .form-button {
-        transition: linear 0.2s;
         width: 15%;
         padding: 1em;
         font-size: 1em;

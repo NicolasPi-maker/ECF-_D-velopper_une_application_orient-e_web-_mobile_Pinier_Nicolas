@@ -2,18 +2,18 @@ body {
     margin: 0;
 }
 
-main {
-    width: 100%;
+main, .recipe-mainTitle, .review-form, #empty-review, .review-note {
     display: flex;
     justify-content: center;
+}
+
+main {
+    width: 100%;
     align-items: center;
     flex-direction: column;
-    align-items: center;
 }
 
 .recipe-mainTitle {
-    display: flex;
-    justify-content: center;
     color: #c4dfaa;
     font-size: 4.5em;
     font-family: 'Baloo Chettan 2', cursive;
@@ -50,14 +50,16 @@ main {
     align-items: center;
 }
 
-.time {
-    display: block;
-    font-size: 4em;
+.time, h3 {
     font-family: 'Baloo Chettan 2',cursive;
 }
 
+.time {
+    display: block;
+    font-size: 4em;
+}
+
 h3 {
-    font-family: "Baloo Chettan 2", cursive;
     font-size: 2em;
     display: inline-block;
     padding-bottom: 0.5em;
@@ -83,8 +85,6 @@ h3 {
 }
 
 .review-form {
-    display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -205,8 +205,6 @@ h3 {
 }
 
 #empty-review {
-    display: flex;
-    justify-content: center;
     margin: 2em;
     font-size: 2em;
     font-family: 'Fenix', serif;
@@ -235,8 +233,6 @@ h3 {
 
 
 .review-note {
-    display: flex;
-    justify-content: center;
     align-items: center;
     min-height: 1.5em;
     min-width: 1.5em;
@@ -349,10 +345,6 @@ h3 {
         display: flex;
         flex-direction: column;
         width: 100%;
-    }
-
-    .field-label, .field-input > * {
-        font-family: 'Fenix', serif;
     }
 
     .field-input > * {

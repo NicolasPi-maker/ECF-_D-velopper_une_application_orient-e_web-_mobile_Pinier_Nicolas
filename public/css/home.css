@@ -2,10 +2,13 @@ body {
     margin: -8px;
 }
 
-.welcome-branding {
-    position: relative;
+.welcome-branding, .recipe-mainTitle {
     display: flex;
     justify-content: center;
+}
+
+.welcome-branding {
+    position: relative;
 }
 
 .welcome-img {
@@ -13,6 +16,10 @@ body {
     height: 95vh;
     display: block;
     object-fit: cover;
+}
+
+.welcome-text, .recipe-mainTitle,.recipe-title, .see-more-link {
+    font-family: 'Baloo Chettan 2', cursive;
 }
 
 .welcome-text {
@@ -24,7 +31,6 @@ body {
     color: whitesmoke;
     background-color: #c4dfaa;
     border-radius: 20px;
-    font-family: 'Baloo Chettan 2', cursive;
 }
 
 .main-image {
@@ -36,11 +42,8 @@ body {
 }
 
 .recipe-mainTitle {
-    display: flex;
-    justify-content: center;
     color: #c4dfaa;
     font-size: 3.5em;
-    font-family: 'Baloo Chettan 2', cursive;
 }
 
 .recipe-title {
@@ -52,17 +55,17 @@ body {
     margin: 0.5em;
     color: whitesmoke;
     font-weight: bold;
-    font-family: 'Baloo Chettan 2', cursive;
     font-size: 3em;
 }
 
 .recipe-img {
+    transition: ease-in 0.4s;
     width: 100%;
     max-height: 30vh;
 }
 
 .recipe-img:hover {
-    animation: ease-in 0.2s;
+    transition: ease-in 0.2s;
     opacity: 90%;
 }
 
@@ -98,7 +101,6 @@ body {
         color: whitesmoke;
         padding: 0.25em 1em;
         border-radius: 20px;
-        font-family:'Baloo Chettan 2', cursive;
         font-weight: bold;
         display: block;
     }
