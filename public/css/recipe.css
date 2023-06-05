@@ -2,27 +2,22 @@ body {
     margin: 0;
 }
 
-main, .recipe-mainTitle, .review-form, #empty-review, .review-note {
+/* .recipe-mainTitle, .review-form, #empty-review, .review-note {
     display: flex;
     justify-content: center;
-}
-
-main {
-    width: 100%;
-    align-items: center;
-    flex-direction: column;
-}
+} */
 
 .recipe-mainTitle {
     color: #c4dfaa;
-    font-size: 4.5em;
+    font-size: 1.5em;
     font-family: 'Baloo Chettan 2', cursive;
+    text-align: center;
 }
 
 .welcome-img {
+    height: 350px;
     width: 100%;
-    height: auto;
-    display: block;
+    object-fit: cover;
 }
 
 .photo-wrapper {
@@ -31,12 +26,13 @@ main {
 
 .recipe-reviewAverage {
     position: absolute;
-    top: 10px;
+    top: 0;
     margin: 0.5em;
-    font-size: 7em;
+    font-size: 3.5em;
     color: whitesmoke;
     text-shadow: 0 4px 4px grey;
     font-family: 'Carme', sans-serif;
+    text-align: center;
 }
 
 .quick-info-wrapper {
@@ -50,49 +46,57 @@ main {
     align-items: center;
 }
 
+.recipe-quick-info > img {
+    width: 2em;
+    height: 2em;
+    margin-right: 0.5em;
+}
+
+.recipe-quick-info > p {
+    font-size: 1.5em;
+}
+
 .time, h3 {
     font-family: 'Baloo Chettan 2',cursive;
 }
 
 .time {
     display: block;
-    font-size: 4em;
+    font-size: 2em;
 }
 
 h3 {
-    font-size: 2em;
+    font-size: 1.2em;
     display: inline-block;
     padding-bottom: 0.5em;
     border-bottom: solid 6px #f4b270 ;
     margin-bottom: 0;
 }
 
-.info-wrapper {
-    margin: 0 4em;
-}
-
 .info-container > h3 {
-    font-size: 3.5em;
+    font-size: 1.2em;
 }
 
 .info-container > p {
-    font-size: 2.60em;
+    font-size: 1em;
 }
+
+.recipe-info, .info-container {
+    margin: 1.5em;
+}
+
 .recipe-info > * {
-    margin: 1em 2em;
-    text-align: justify;
-    font-size: 2em;
+    font-size: 1em;
 }
 
 .review-form {
     align-items: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .form-field {
     display: flex;
-    flex-direction: column;
-    width: 50em;
 }
 
 .field-label, .field-input > * {
@@ -102,32 +106,42 @@ h3 {
 
 .field-input > * {
     height: 2em;
-    width: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-top: 1em;
-    font-size: 2em;
+    font-size: 1em;
     margin-bottom: 2em;
 }
 
+.comment {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 1em;
+}
+
 .comment > * {
-    height: 15em;
+    height: 10em;
+    margin: 0.5em;
+    width: 100%;
 }
 
 .button-wrapper {
     align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .form-button {
     transition: linear 0.2s;
-    width: 15em;
-    padding: 0.5em;
+    padding: 0.5em 0;
     background-color: #c4dfaa;
     border: none;
     border-radius: 25px;
     color: white;
-    font-size: 2.5em;
     font-weight: bold;
-    margin: 2em 0;
+    margin: 1em 2em;
+    font-size: 1em;
+    width: 100%;
 }
 
 .form-button:hover {
@@ -138,19 +152,14 @@ h3 {
 .note-bubble {
     display: flex;
     position: relative;
-}
-
-.review-container {
-    margin: 2em;
+    margin: 1em;
 }
 
 .review-wrapper {
     display: flex;
     justify-content: space-between;
-    min-width: 90%;
     border-bottom: solid 1px black;
     padding: 0.5em;
-    margin: 2em;
 }
 
 .rating {
@@ -172,13 +181,13 @@ h3 {
     content: '';
     display: block;
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     margin-right: 1em;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    border: solid 1px black;
+    border: solid 1px lightgray;
     background-color: whitesmoke;
 }
 
@@ -187,13 +196,13 @@ h3 {
     display: block;
     position: absolute;
     top: 0;
-    width: 50px;
-    height: 50px;
+    width: 25px;
+    height: 25px;
     margin-right: 1em;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    border: solid 1px black;
+    border: solid 1px lightgray;
     background-color: #c4dfaa;
     opacity: 0;
     transition: .5s;
@@ -217,10 +226,17 @@ h3 {
     font-family: 'Fenix', serif;
 }
 
+.review-mainTitle {
+    font-size: 2em;
+    text-align: center;
+    color: #c4dfaa;
+    font-family: 'Baloo Chettan 2';
+}
+
 .review-date {
     display: flex;
     align-items: baseline;
-    font-size: 2em;
+    font-size: 1em;
 }
 
 .review-date > * {
@@ -228,52 +244,48 @@ h3 {
 }
 
 .review-comment {
-    font-size: 2em;
+    font-size: 1em;
 }
-
 
 .review-note {
     align-items: center;
     min-height: 1.5em;
     min-width: 1.5em;
-    font-size: 3em;
-    margin: 0.5em 1em;
+    font-size: 1.5em;
     background-color: #c4dfaa;
     border-radius: 50%;
     color: whitesmoke;
     font-family: 'Baloo Chettan 2', cursive;
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (min-width: 1160px) {
-
+    main {
+        width: 50%;
+        margin: auto;
+    }
     .image-wrapper {
         position: relative;
-        width: 100%;
-        height: 100%;
+
     }
 
     .photo-wrapper {
         display: flex;
-        justify-content: center;
         align-items: center;
-        margin: 0 2em;
-    }
-
-    .recipe-reviewAverage {
-        top: 20px;
-        left: 20px;
+        justify-content: center;
+        margin: 0;
+        padding-bottom: 10px;
+        border-bottom: 1px lightgray solid;
     }
 
     .recipe-img {
         display: flex;
-        width: 650px;
+        width: 400px;
         max-height: 650px;
         border-radius: 20px;
-        margin: 2em;
-    }
-
-    .recipe-mainTitle {
-        margin: 0;
+        margin-right: 2em;
+        
     }
 
     .quick-info-container {
@@ -281,12 +293,23 @@ h3 {
         justify-content: flex-start;
         flex-direction: column;
         align-items: flex-start;
+        height: 400px;
+    }
+
+    .recipe-quick-info > * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .time {
         font-size: 2em;
         margin-right: 2em;
-        margin-left: 1em;
+        margin-left: 0.5em;
+    }
+
+    .recipe-info {
+        margin: 0;
     }
 
     h3 {
@@ -297,7 +320,8 @@ h3 {
         display: flex;
         justify-content: flex-start;
         flex-direction: column;
-        width: 100%;
+        padding-bottom: 10px;
+        border-bottom: 1px lightgray solid;
     }
 
     .allergen-infos, .diet-infos {
@@ -318,15 +342,15 @@ h3 {
     }
 
     .info-container {
-        max-width: 80%;
+        margin: 0 4em;
     }
 
     .info-container > h3 {
-        font-size: 2em;
+        font-size: 1em;
     }
 
     .info-container > p {
-        font-size: 2em;
+        font-size: 1em;
     }
 
     .review-form-wrapper {
@@ -334,16 +358,6 @@ h3 {
         flex-direction: column;
         align-items: center;
         margin: 6em 0;
-        width: 100%;
-    }
-
-    .review-form {
-        width: 90%;
-    }
-
-    .form-field {
-        display: flex;
-        flex-direction: column;
         width: 100%;
     }
 
@@ -361,19 +375,33 @@ h3 {
         width: 30px;
     }
 
+    .review-container {
+        margin: 4em;
+    }
+
+    .review-mainTitle {
+        text-align: start;
+    }
+
     .comment > * {
         height: 10em;
         resize: none;
     }
 
     .button-wrapper {
-        align-items: flex-end;
+        justify-content: end;
     }
-
+    
     .form-button {
         transition: linear 0.2s;
-        width: 7.5em;
-        font-size: 1.5em;
-        margin: 0;
+        width: 20%;
+        font-size: 1em;
+        margin: 1.5em;
+        cursor: pointer;
+    }
+
+    #empty-review {
+        margin: auto;
+        font-size: 1em;
     }
 }

@@ -9,68 +9,66 @@
 
 
 {% block content %}
-    <main>
-        <h1 class="mainTitle">Posez moi vos questions</h1>
-        <section class="form-wrapper">
-            {{ form_start(form, {'attr': {'class': 'form'}}) }}
-                <div class="form-field">
-                    <div class="field-label">
-                        {{ form_label(form.name, null, {
-                            label: 'Nom'
-                        }) }}
-                    </div>
-                    <div class="field-input">
-                     {{ form_widget(form.name) }}
-                    </div>
+    <h1 class="mainTitle">Posez moi vos questions</h1>
+    <section class="form-wrapper">
+        {{ form_start(form, {'attr': {'class': 'form'}}) }}
+            <div class="form-field">
+                <div class="field-label">
+                    {{ form_label(form.name, null, {
+                        label: 'Nom'
+                    }) }}
                 </div>
-                <div class="form-field">
-                    <div class="field-label">
-                        {{ form_label(form.lastName, null, {
-                            label: 'Prénom'
-                        }) }}
-                    </div>
-                    <div class="field-input">
-                        {{ form_widget(form.lastName) }}
-                    </div>
+                <div class="field-input">
+                    {{ form_widget(form.name) }}
                 </div>
-                <div class="form-field">
-                    <div class="field-label">
-                        {{ form_label(form.email, null, {
-                            label: 'Adresse email'
-                        }) }}
-                    </div>
-                    <div class="field-input">
-                        {{ form_widget(form.email) }}
-                    </div>
+            </div>
+            <div class="form-field">
+                <div class="field-label">
+                    {{ form_label(form.lastName, null, {
+                        label: 'Prénom'
+                    }) }}
                 </div>
-                <div class="form-field">
-                    <div class="field-label">
-                        {{ form_label(form.subject, null, {
-                            label: 'Sujet'
-                        }) }}
-                    </div>
-                    <div class="field-input">
-                        {{ form_widget(form.subject) }}
-                    </div>
+                <div class="field-input">
+                    {{ form_widget(form.lastName) }}
                 </div>
-                <div class="form-field">
-                    <div class="field-label">
-                        {{ form_label(form.message, null, {
-                            label: 'Message'
-                        }) }}
-                    </div>
-                    <div class="field-input message-input">
-                     {{ form_widget(form.message, { 'attr': {
-                         'placeholder': 'Votre message...'
-                     }}) }}
-                    </div>
+            </div>
+            <div class="form-field">
+                <div class="field-label">
+                    {{ form_label(form.email, null, {
+                        label: 'Adresse email'
+                    }) }}
                 </div>
-                <div class="button-wrapper">
-                    <button class="form-button" type="submit">
-                        Envoyer
-                    </button>
+                <div class="field-input">
+                    {{ form_widget(form.email) }}
                 </div>
-            {{ form_end(form) }}
-        </section>
-    </main>
+            </div>
+            <div class="form-field">
+                <div class="field-label">
+                    {{ form_label(form.subject, null, {
+                        label: 'Sujet'
+                    }) }}
+                </div>
+                <div class="field-input">
+                    {{ form_widget(form.subject) }}
+                </div>
+            </div>
+            <div class="form-field">
+                <div class="field-label">
+                    {{ form_label(form.message, null, {
+                        label: 'Message'
+                    }) }}
+                </div>
+                <div class="field-input message-input">
+                    {{ form_widget(form.message, { 'attr': {
+                        'placeholder': 'Je souhaite devenir membre..'
+                    }}) }}
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <button class="form-button" type="submit">
+                    Envoyer
+                </button>
+            </div>
+        {{ form_end(form) }}
+    </section>
 {% endblock%}

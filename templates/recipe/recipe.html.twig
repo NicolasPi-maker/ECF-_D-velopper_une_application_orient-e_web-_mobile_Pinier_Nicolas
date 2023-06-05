@@ -9,137 +9,134 @@
 {% endblock %}
 
 {% block content%}
-    <main>
-        <div>
-            <div class="photo-wrapper">
-                <div class="image-wrapper">
-                    <p class="recipe-reviewAverage">
-                        {% if recipeNote > 0 %}
-                        {{ recipeNote }}
-                        {% endif %}
+    <div>
+        <div class="photo-wrapper">
+            <div class="image-wrapper">
+                <p class="recipe-reviewAverage">
+                    {% if recipeNote > 0 %}
+                    {{ recipeNote }}
+                    {% endif %}
+                </p>
+                <img src="{{ asset('uploads/recipe_image/'~ recipe.photo ~'') }}" alt="{{recipe.title}}" class="welcome-img recipe-img"/>
+            </div>
+        <article class="quick-info-container">
+            <h1 class="recipe-mainTitle">{{recipe.title}}</h1>
+            <section class="quick-info-wrapper">
+                <div class="recipe-quick-info">
+                    <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEoElEQVR4nO2a34tVVRTHPzahYzUk0kP0g6AaQ0y7/oDMoCTKH2X1EEm99OMlzCCoNzPqsYdM9C/wKSrBQqJ0IqnAHwhi+RJpajMZPdRopmM4Ms71YZ0D56597p5z9ln7XKvzgc3cM3eftb573332WXvtDQ0NDQ0N/1+m9VoAcAkYA84AI8BR4AjwbfL5P0/bU04BHwD39UxdDfg6IFv2A2u4OkatKUU7IC0HgSU9URoJ3cBhYBdwIee7tFwGtgL9PdBrjm7ce8n/+4G1SGdM5tRrA98DgzXrNUc3anlOnfnApzl128BpYFktSjM8BjxqZCvbmHPAdE/dR4CTuJ1wAVhlpGdKHkTe25eAlwzsZRuys0D9AeBD8jsh+ki4EwlYUqeTwLsVbWYbsb7EfRtw54bTRJwTZgKHcXv+9Yp2s7buKnnvetxOOEykt8MW3MZviOGoJBtxdW2xdrIEmFBOPubqicr0nDABLLJ0cFA5OAFc36XuLcCtls4LMAAcp1PjAYx+oCdwh9iKLnVvBn4E/gAesnBeguW488FqC8MHlNEdnrq3Ab8n9S4CL1gIKIEOlvZVNbhAGbyc/M/HUqTx6T2bgL6qQgpyL+4omEqvl83K2K6C972Yc9+sKkJKsFv5fr+KsV+VsWdL3LtJ3fsTMKeKmII8o/yOhBq6RxkaA2aUuL8P+FLZ+AtYGSqoINfhLqWDosN1hA3/LLOQX16/o98IEVSCL5TPV7pVvMZjZL66/i5AyFngqeRvSh8yt2yj3Igqw351HZRT3ENnLz5ZQdBK3EiyDYwjS+DPkEfOCh27fB1iRK+7qwp8E7cDsuUMcHtFHylzle0TIUZGlZGbDIRtw98J2w18AMxWdv8MMTKujFg8rzPoDJJ0+dvAB0hWKWv3YreKvklQ064oCqRTxyP7gBKLIF8HnFfXA2FaHPZ4vhsy8qG16rYUwnoSTJmDpK708B9FFlMWFJ4EfSPgF3VtFcYeAx5AVm7nkrIdaAG/GfnQWk92q3itx8hRJA2dMg/4vIKoLMeQmD0W89R1111m3wg4oq4fDpZTP3pzRbelEHoxdJ5/x15c3mLo7lBjp5ShtQYCY/M8nZqHfZWnigN0ZPZyuK7a0LtVlaLLFp29OYlxutmYFsYpMZClZdagLynaa3bSqXWvhdE1uEGLSbrZmBW4Ok12jKfhboz8jF1obMGNSLSX1Vg5JZ5lMW5C4xNLBxXJ2xpbaO1kK+4Q22jtJIB3cHVtjuGoHzmTo98Kr8ZwVpDXcBt/iHi5RgZxV3KTwNuxHHrI++VHKX/GoDT3I3sE2vkO6tn9GQA+yvH/D3J8pxZWkX+O7zhxNz5W0/2QVOwNF4dl5Cc22kiau2XoayFukJMd9ksNfZVikPxzQ+ncsBt4DjlfVJaZyMJmiO4HJQ9RwzM/Ff3ImZy8jY/sEB1CzhQ9jaSsZiPZ2+nJ57nJd28BX+E/KjuBvOqizfYhLMI9TBGj7CNCkGPJ44hI64bvpcbToBYsQM4IjBDe6GHkgIPeqDWjrmNug0ieroWk2u5Anvsbku/HkDfKCJIw/QH4BnmtNjQ0NDQ0ROIKVD1RKdcM+GIAAAAASUVORK5CYII="
+                        alt="timer-icon"
+                    >
+                    <p class="time">{{recipe.setupTime|date('H:i')}}</p>
+                </div>
+                <div class="recipe-quick-info">
+                    <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAD40lEQVR4nO2bS2wNURjHf1WkShttRRHvx8JbSCw8ShOEtpGQWBAsLOzoTsLOpomFWFgIK0EiFiwkhCAW2iDRBdGQECw8gtCkTdNGVS2+M4zTmemcuXPPmav3l9zMvd85Z+Y//3vOmTvfPQMjnFLXAgxpAA4DY4H3QL9bOXYpAT4Ag+rVB9wGmoH5DnVZYyVy4l+BB8BP/poxCJxLstNRaamzQIPaXgXWA5OB3UCbik93IcomD5FversWv6Lih6wrMqAZeARUJ2w/CenyfcB4X3w00IkYMC8XgWkQdXL3EZEbQsorgTER7fep9re0eJ2Kv4ipcQhpzQF1yOR0bJh6JQGxSuAdcCOinTf+b4bEo9pGkpYBc9W+FiRoWw1URbQtBTar97oBTWrr3IB8sgaoAV4Cr33xGcBioIu/VwJjCsGARrUN+/bvAD+S7rwQDAgb540hcSOybsAMYAnSzVt98TKgHrkC3M7lAGkZ8FNtB0LKB7R6QW2DyhqRK4fezeuBcqAd+GikNE9UASeBZSHlG4EW5C5OpwQ4CuwMKLuOfMsHtPhpFT+eRGyhUAb0AL+AaVrZa8SA1bZF2WQrcpJPtPgiFf9CCkM4y5Ng2Czv/1X4y54c+4R1c+++YlcaBxkdUVYK7CD5HVwuTETu7vqRRMgKFR8FrFXv5wAHY+yrC8khGKfPmvg341LIrz1hJxnVAx4Ap5D7791ABXAZ6I5okyZjSJb0rED0diN6+5DfETnxFnFydq47ssBsROvbOJWzfBWwwog3wD8HLAVOEJyammJHTqpMIXjs9wNHgOfwrwE7gG3512WNMmBTSNkjAgzwhsNF4ILW4BJQm6Y6C3wG9mqx/UiC9c/QD7oMvgHuarHeVKXZoZeh57FOr1ScBA3rXyL7vWGcSWVTA9YOX6WwMDVgLzK5ZJlapKfGwtSANuRfnCxj9HN9xE+CI96AoCHQBEzVYjUWtKRNDXBWi63SK/kN6PRVGlKxAKkgPGP03XvjN+AMkmmtCGjQQuH1gm8E/13fBVwz3VkxIfK/UjTAtQDXFA1wLcA1RQNcC3BN0QDXAlxTNMC1ANcUDXAtwDVxDfBS4UYpZ0d4GmOl7+Ma4C1GnGMsxz5z1TbWAsq4BnjLVPXHVbKIt4i6NbKWIQuR5a69ZLsXzEI0DiBL6VPlPJJpaUee8sgaE4DHiMaL+TjAROTZnEGgg2wtU10FPEW0vcJgaV/QMzxRzEQWMC9XB2sD7gGf1GfbTEVWjtch59KBzFNv8nnQcmSVdjfu1/95rx4kcx2U0Y7EtAf4GQ9sQVZx1ua4r6R8Bp4hD03YWr/4f/Ebn3gC4VWmFNEAAAAASUVORK5CYII="*
+                        alt="cook-icon"
+                    >
+                    <p class="time">{{recipe.cookingTime|date('H:i')}}</p>
+                </div>
+                <div class="recipe-quick-info">
+                    <img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAFLUlEQVR4nO2a+2scVRTHP9tuSTbNao1afMRKqrVG4w+KaKxQquCjoA1aUFFSrdIHxAdIIVgExX/AIvYHLS22aNVaxP7moymtVWm1PqBVfDStD1prUcRITNOkWX84O9xzJzOT3dm7MxuyHxiY2fvde869c5/nDtSpU6dOnTp1pirTHeSRA1YBeeCog/wmFTlgD1AAzgBXpetO8ryBFL4AjAJXputOsizGFH4MWJ2uO8mzC1MB61L2JXHywGmk8KeBlnTdSZ4OzNv/ImVfKmJazP81qvtBF45MNi7GtIA/iF+Rk5rDmEq4N2VfnJMD3gb6gLYQzbOYCjgBzEnGtWR4AFO4Q0BzgCYP/KJ0XyIVN6kI2wsMAsuBBmA2MtXt8Wm837qBGcCFxf99UoLdFqTbLAUWARcBx4Ch8tyvLvdj3u5fQDZE97DSnSR6g5UFXkAqquC7BoHnJ/h/omSA7zAO3hyh+1HpOkN004EdjC+4/3qPBCshavoqAB+r58sidLvV87wQ3VpgiXruB14tXv3q9y6gN8KvRFmHeTMrInQvKt3KgPQ88K/SbEDGF48GYKNKHyB44E0cveFZHKH7SOnuCki/R6X/hF14jwakJXi6rthel0FUF+gAFhbvR4BPQ3RXICM5SEwgSKe7Tx8wHKAZBnaq57Cu5JSwCsgBWzGD0XakWfppQIIi3gyxA/g7QFdQ95kSfRsrUVcV9EJogPABUE+V/xEeEdLBk8MEd4FG4IjS3RnTdye0IZucIaL74jzkjY8glRZGrpifV7iN2JXQCGxS6Sewd5yp0AScU4JuFrKSm4iV2PN9P/AKMg0e8aVFzTiTkgXAeiRyPNFC6ExRe1MqnjqmC9jPxIUOu/YRPK06o9QRuVzagZeBWwPSTiGVchT4s/jbecBc4AaC+/6HwBPIkrumyQCPI4OnfpPDwDbgdoJnAI9G4A7gHUzQVW+WVlXLcRc0IYX09+fNQGuM/C4BtjB+3HidGpgh/MwGDmA7+gPSpCulE3u3WQA+o4ZC8RcA32I7uAmY6dBGM9KStI1vgPMd2ohFC3bhxwjfyuaBJ4HvgYPApTHsrS3a0JVwdox8nJAD9mL392Uh2vuA49hv8LmYdpdjjwu7iB5Yq8Zr2IV/NEAzE4ku++f3k8C1Fdhegd0SNlSQVyz8y9pnAjRzkCaqdceAHtyMDzosn+jyuR3Z+XmGtwRoWrEPTgrImt9lf80gU6LejbY7zD+QLHIY6hk9yPizgBZkCvQ0p5B+Ww1yyLmFZ2s/4dFrJ/QqY4PA1QGax5RmCFn9VZMO7Ba5plqGWrEDm0+H6OYi+/l/kGVtEqxRfg1Q2va8bHR/O0B07H4GyU5NWeArjH+bXRu4BjP3jgE3ujbggE7M1DiK4y/W3sXU7lsuM3bMdoyf21xlOh9TsyPA5b70u5H+/jlwliujMZmPvH1vceb3NRbrMbX6pi+tAfuI/DYXBitEb8lfqjSzZuyR/zpfeo9K+x2JCaTN9dgzQkWrzkdUZvsC0vXR2VOVGHKMXqx1V5JRn8ooaK3dg/S1vdRWlGY1xu8P4mYyCxn0Ckh8LuyMoBY/izkX2/dYg7M+9to5gbYW2Y3xf2mYKOp0eJG6j92MUuR9dX9LnAy+xtTgAhceJcxCjP9lf86bxcTlR6mtAa5UmjDL92HK/O6oDVN7Pzt3LTl+w5Qj8EPOLDIOPIS9hdTiDDX00VKZ6I8seoFf1fNx5OMOljE+aDlVru5pxZupSiGDdIEHkdDSVOIQsPV/J4H4abhSMEwAAAAASUVORK5CYII="
+                        alt="rest-icon"
+                    >
+                    <p class="time">{{recipe.restTime|date('H:i')}}</p>
+                </div>
+            </section>
+            <section class="recipe-info">
+                <div class="main-info-wrapper">
+                    <h3>Description</h3>
+                    <p>
+                        {{ recipe.description|raw}}
                     </p>
-                    <img src="{{ asset('uploads/recipe_image/'~ recipe.photo ~'') }}" alt="{{recipe.title}}" class="welcome-img recipe-img"/>
                 </div>
-            <article class="quick-info-container">
-                <h1 class="recipe-mainTitle">{{recipe.title}}</h1>
-                <section class="quick-info-wrapper">
-                    <div class="recipe-quick-info">
-                        <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEoElEQVR4nO2a34tVVRTHPzahYzUk0kP0g6AaQ0y7/oDMoCTKH2X1EEm99OMlzCCoNzPqsYdM9C/wKSrBQqJ0IqnAHwhi+RJpajMZPdRopmM4Ms71YZ0D56597p5z9ln7XKvzgc3cM3eftb573332WXvtDQ0NDQ0N/1+m9VoAcAkYA84AI8BR4AjwbfL5P0/bU04BHwD39UxdDfg6IFv2A2u4OkatKUU7IC0HgSU9URoJ3cBhYBdwIee7tFwGtgL9PdBrjm7ce8n/+4G1SGdM5tRrA98DgzXrNUc3anlOnfnApzl128BpYFktSjM8BjxqZCvbmHPAdE/dR4CTuJ1wAVhlpGdKHkTe25eAlwzsZRuys0D9AeBD8jsh+ki4EwlYUqeTwLsVbWYbsb7EfRtw54bTRJwTZgKHcXv+9Yp2s7buKnnvetxOOEykt8MW3MZviOGoJBtxdW2xdrIEmFBOPubqicr0nDABLLJ0cFA5OAFc36XuLcCtls4LMAAcp1PjAYx+oCdwh9iKLnVvBn4E/gAesnBeguW488FqC8MHlNEdnrq3Ab8n9S4CL1gIKIEOlvZVNbhAGbyc/M/HUqTx6T2bgL6qQgpyL+4omEqvl83K2K6C972Yc9+sKkJKsFv5fr+KsV+VsWdL3LtJ3fsTMKeKmII8o/yOhBq6RxkaA2aUuL8P+FLZ+AtYGSqoINfhLqWDosN1hA3/LLOQX16/o98IEVSCL5TPV7pVvMZjZL66/i5AyFngqeRvSh8yt2yj3Igqw351HZRT3ENnLz5ZQdBK3EiyDYwjS+DPkEfOCh27fB1iRK+7qwp8E7cDsuUMcHtFHylzle0TIUZGlZGbDIRtw98J2w18AMxWdv8MMTKujFg8rzPoDJJ0+dvAB0hWKWv3YreKvklQ064oCqRTxyP7gBKLIF8HnFfXA2FaHPZ4vhsy8qG16rYUwnoSTJmDpK708B9FFlMWFJ4EfSPgF3VtFcYeAx5AVm7nkrIdaAG/GfnQWk92q3itx8hRJA2dMg/4vIKoLMeQmD0W89R1111m3wg4oq4fDpZTP3pzRbelEHoxdJ5/x15c3mLo7lBjp5ShtQYCY/M8nZqHfZWnigN0ZPZyuK7a0LtVlaLLFp29OYlxutmYFsYpMZClZdagLynaa3bSqXWvhdE1uEGLSbrZmBW4Ok12jKfhboz8jF1obMGNSLSX1Vg5JZ5lMW5C4xNLBxXJ2xpbaO1kK+4Q22jtJIB3cHVtjuGoHzmTo98Kr8ZwVpDXcBt/iHi5RgZxV3KTwNuxHHrI++VHKX/GoDT3I3sE2vkO6tn9GQA+yvH/D3J8pxZWkX+O7zhxNz5W0/2QVOwNF4dl5Cc22kiau2XoayFukJMd9ksNfZVikPxzQ+ncsBt4DjlfVJaZyMJmiO4HJQ9RwzM/Ff3ImZy8jY/sEB1CzhQ9jaSsZiPZ2+nJ57nJd28BX+E/KjuBvOqizfYhLMI9TBGj7CNCkGPJ44hI64bvpcbToBYsQM4IjBDe6GHkgIPeqDWjrmNug0ieroWk2u5Anvsbku/HkDfKCJIw/QH4BnmtNjQ0NDQ0ROIKVD1RKdcM+GIAAAAASUVORK5CYII="
-                            alt="timer-icon"
-                        >
-                        <p class="time">{{recipe.setupTime|date('H:i')}}</p>
-                    </div>
-                    <div class="recipe-quick-info">
-                        <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAD40lEQVR4nO2bS2wNURjHf1WkShttRRHvx8JbSCw8ShOEtpGQWBAsLOzoTsLOpomFWFgIK0EiFiwkhCAW2iDRBdGQECw8gtCkTdNGVS2+M4zTmemcuXPPmav3l9zMvd85Z+Y//3vOmTvfPQMjnFLXAgxpAA4DY4H3QL9bOXYpAT4Ag+rVB9wGmoH5DnVZYyVy4l+BB8BP/poxCJxLstNRaamzQIPaXgXWA5OB3UCbik93IcomD5FversWv6Lih6wrMqAZeARUJ2w/CenyfcB4X3w00IkYMC8XgWkQdXL3EZEbQsorgTER7fep9re0eJ2Kv4ipcQhpzQF1yOR0bJh6JQGxSuAdcCOinTf+b4bEo9pGkpYBc9W+FiRoWw1URbQtBTar97oBTWrr3IB8sgaoAV4Cr33xGcBioIu/VwJjCsGARrUN+/bvAD+S7rwQDAgb540hcSOybsAMYAnSzVt98TKgHrkC3M7lAGkZ8FNtB0LKB7R6QW2DyhqRK4fezeuBcqAd+GikNE9UASeBZSHlG4EW5C5OpwQ4CuwMKLuOfMsHtPhpFT+eRGyhUAb0AL+AaVrZa8SA1bZF2WQrcpJPtPgiFf9CCkM4y5Ng2Czv/1X4y54c+4R1c+++YlcaBxkdUVYK7CD5HVwuTETu7vqRRMgKFR8FrFXv5wAHY+yrC8khGKfPmvg341LIrz1hJxnVAx4Ap5D7791ABXAZ6I5okyZjSJb0rED0diN6+5DfETnxFnFydq47ssBsROvbOJWzfBWwwog3wD8HLAVOEJyammJHTqpMIXjs9wNHgOfwrwE7gG3512WNMmBTSNkjAgzwhsNF4ILW4BJQm6Y6C3wG9mqx/UiC9c/QD7oMvgHuarHeVKXZoZeh57FOr1ScBA3rXyL7vWGcSWVTA9YOX6WwMDVgLzK5ZJlapKfGwtSANuRfnCxj9HN9xE+CI96AoCHQBEzVYjUWtKRNDXBWi63SK/kN6PRVGlKxAKkgPGP03XvjN+AMkmmtCGjQQuH1gm8E/13fBVwz3VkxIfK/UjTAtQDXFA1wLcA1RQNcC3BN0QDXAlxTNMC1ANcUDXAtwDVxDfBS4UYpZ0d4GmOl7+Ma4C1GnGMsxz5z1TbWAsq4BnjLVPXHVbKIt4i6NbKWIQuR5a69ZLsXzEI0DiBL6VPlPJJpaUee8sgaE4DHiMaL+TjAROTZnEGgg2wtU10FPEW0vcJgaV/QMzxRzEQWMC9XB2sD7gGf1GfbTEVWjtch59KBzFNv8nnQcmSVdjfu1/95rx4kcx2U0Y7EtAf4GQ9sQVZx1ua4r6R8Bp4hD03YWr/4f/Ebn3gC4VWmFNEAAAAASUVORK5CYII="*
-                            alt="cook-icon"
-                        >
-                        <p class="time">{{recipe.cookingTime|date('H:i')}}</p>
-                    </div>
-                    <div class="recipe-quick-info">
-                        <img
-                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAFLUlEQVR4nO2a+2scVRTHP9tuSTbNao1afMRKqrVG4w+KaKxQquCjoA1aUFFSrdIHxAdIIVgExX/AIvYHLS22aNVaxP7moymtVWm1PqBVfDStD1prUcRITNOkWX84O9xzJzOT3dm7MxuyHxiY2fvde869c5/nDtSpU6dOnTp1pirTHeSRA1YBeeCog/wmFTlgD1AAzgBXpetO8ryBFL4AjAJXputOsizGFH4MWJ2uO8mzC1MB61L2JXHywGmk8KeBlnTdSZ4OzNv/ImVfKmJazP81qvtBF45MNi7GtIA/iF+Rk5rDmEq4N2VfnJMD3gb6gLYQzbOYCjgBzEnGtWR4AFO4Q0BzgCYP/KJ0XyIVN6kI2wsMAsuBBmA2MtXt8Wm837qBGcCFxf99UoLdFqTbLAUWARcBx4Ch8tyvLvdj3u5fQDZE97DSnSR6g5UFXkAqquC7BoHnJ/h/omSA7zAO3hyh+1HpOkN004EdjC+4/3qPBCshavoqAB+r58sidLvV87wQ3VpgiXruB14tXv3q9y6gN8KvRFmHeTMrInQvKt3KgPQ88K/SbEDGF48GYKNKHyB44E0cveFZHKH7SOnuCki/R6X/hF14jwakJXi6rthel0FUF+gAFhbvR4BPQ3RXICM5SEwgSKe7Tx8wHKAZBnaq57Cu5JSwCsgBWzGD0XakWfppQIIi3gyxA/g7QFdQ95kSfRsrUVcV9EJogPABUE+V/xEeEdLBk8MEd4FG4IjS3RnTdye0IZucIaL74jzkjY8glRZGrpifV7iN2JXQCGxS6Sewd5yp0AScU4JuFrKSm4iV2PN9P/AKMg0e8aVFzTiTkgXAeiRyPNFC6ExRe1MqnjqmC9jPxIUOu/YRPK06o9QRuVzagZeBWwPSTiGVchT4s/jbecBc4AaC+/6HwBPIkrumyQCPI4OnfpPDwDbgdoJnAI9G4A7gHUzQVW+WVlXLcRc0IYX09+fNQGuM/C4BtjB+3HidGpgh/MwGDmA7+gPSpCulE3u3WQA+o4ZC8RcA32I7uAmY6dBGM9KStI1vgPMd2ohFC3bhxwjfyuaBJ4HvgYPApTHsrS3a0JVwdox8nJAD9mL392Uh2vuA49hv8LmYdpdjjwu7iB5Yq8Zr2IV/NEAzE4ku++f3k8C1Fdhegd0SNlSQVyz8y9pnAjRzkCaqdceAHtyMDzosn+jyuR3Z+XmGtwRoWrEPTgrImt9lf80gU6LejbY7zD+QLHIY6hk9yPizgBZkCvQ0p5B+Ww1yyLmFZ2s/4dFrJ/QqY4PA1QGax5RmCFn9VZMO7Ba5plqGWrEDm0+H6OYi+/l/kGVtEqxRfg1Q2va8bHR/O0B07H4GyU5NWeArjH+bXRu4BjP3jgE3ujbggE7M1DiK4y/W3sXU7lsuM3bMdoyf21xlOh9TsyPA5b70u5H+/jlwliujMZmPvH1vceb3NRbrMbX6pi+tAfuI/DYXBitEb8lfqjSzZuyR/zpfeo9K+x2JCaTN9dgzQkWrzkdUZvsC0vXR2VOVGHKMXqx1V5JRn8ooaK3dg/S1vdRWlGY1xu8P4mYyCxn0Ckh8LuyMoBY/izkX2/dYg7M+9to5gbYW2Y3xf2mYKOp0eJG6j92MUuR9dX9LnAy+xtTgAhceJcxCjP9lf86bxcTlR6mtAa5UmjDL92HK/O6oDVN7Pzt3LTl+w5Qj8EPOLDIOPIS9hdTiDDX00VKZ6I8seoFf1fNx5OMOljE+aDlVru5pxZupSiGDdIEHkdDSVOIQsPV/J4H4abhSMEwAAAAASUVORK5CYII="
-                            alt="rest-icon"
-                        >
-                        <p class="time">{{recipe.restTime|date('H:i')}}</p>
-                    </div>
-                </section>
-                <section class="recipe-info">
-                    <div class="main-info-wrapper">
-                        <h3>Description</h3>
-                        <p>
-                            {{ recipe.description|raw}}
-                        </p>
-                    </div>
-                    <div class="main-info-wrapper allergen-infos">
-                        <h3>Allergènes :</h3>
-                        {% for allergen in recipe.allergenId %}
-                            <p class="allergen-text">{{ allergen|capitalize }}</p>
-                        {% endfor %}
-                    </div>
-                    <div class="main-info-wrapper diet-infos">
-                        <h3>Régimes :</h3>
-                        {% for diet in recipe.dietId %}
-                            <p class="diet-text">{{ diet|capitalize }}</p>
-                        {% endfor %}
-                    </div>
-                </section>
-            </article>
-        </div>
-        <section class="info-wrapper">
-            <div class="info-container">
-                <h3>Ingrédients</h3>
-                {% for ingredient in recipe.ingredients %}
-                    <p>{{ ingredient|capitalize }}</p>
-                {% endfor %}
-            </div>
-            <div class="info-container">
-                <h3>&Eacute;tapes</h3>
-                {% for step in recipe.steps %}
-                    <p>{{ loop.index }}. {{ step|capitalize }}</p>
-                {% endfor %}
-            </div>
-        </section>
-        {% if patient %}
-        <section class="review-form-wrapper">
-            <h2 class="recipe-mainTitle">Votre avis compte</h2>
-                {{ form_start(form, {'attr': {'class': 'review-form'}}) }}
-                <div class="form-field">
-                    <div class="note-bubble">
-                        <div class="rating">
-                            <input type="radio" name="bubble" id="bubble1" value="5">
-                            <label for="bubble1"></label>
-
-                            <input type="radio" name="bubble" id="bubble2" value="4">
-                            <label for="bubble2"></label>
-
-                            <input type="radio" name="bubble" id="bubble3" value="3">
-                            <label for="bubble3"></label>
-
-                            <input type="radio" name="bubble" id="bubble4" value="2">
-                            <label for="bubble4"></label>
-
-                            <input type="radio" name="bubble" id="bubble5" value="1">
-                            <label for="bubble5"></label>
-                        </div>
-                    </div>
+                <div class="main-info-wrapper allergen-infos">
+                    <h3>Allergènes :</h3>
+                    {% for allergen in recipe.allergenId %}
+                        <p class="allergen-text">{{ allergen|capitalize }}</p>
+                    {% endfor %}
                 </div>
-                <div class="form-field">
-                    <div class="field-input comment">
-                        {{ form_widget(form.comment) }}
-                    </div>
+                <div class="main-info-wrapper diet-infos">
+                    <h3>Régimes :</h3>
+                    {% for diet in recipe.dietId %}
+                        <p class="diet-text">{{ diet|capitalize }}</p>
+                    {% endfor %}
                 </div>
-                <div class="form-field button-wrapper">
-                    <input type="submit" class="form-button"  name="review-btn" value="Envoyer" />
-                </div>
-                {{ form_end(form) }}
-        </section>
-        {% endif %}
-        <div class="review-container">
-            <h2 class="recipe-mainTitle">Avis</h2>
-            {% if reviews != null %}
-            {% for review in reviews %}
-                <div class="review-wrapper">
-                    <div class="patient-review">
-                        <div>
-                            <div class="review-date">
-                                <h4>{{ review.patient_id.name }} {{ review.patient_id.lastName }}</h4>
-                                <p> "{{review.postDate|date("d M Y (H:i)", "Europe/Paris") }}"</p>
-                            </div>
-                            <p class="review-comment">{{ review.comment }}</p>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="review-note">{{ review.note }}</p>
-                    </div>
-                </div>
+            </section>
+        </article>
+    </div>
+    <section class="info-wrapper">
+        <div class="info-container">
+            <h3>Ingrédients</h3>
+            {% for ingredient in recipe.ingredients %}
+                <p>{{ ingredient|capitalize }}</p>
             {% endfor %}
-            {% else%}
-            <h4 id="empty-review">Soyez le premier à laisser un avis</h4>
-            {% endif %}
         </div>
+        <div class="info-container">
+            <h3>&Eacute;tapes</h3>
+            {% for step in recipe.steps %}
+                <p>{{ loop.index }}. {{ step|capitalize }}</p>
+            {% endfor %}
         </div>
+    </section>
+    {% if patient %}
+    <section class="review-form-wrapper">
+        <h2 class="recipe-mainTitle">Votre avis compte</h2>
+            {{ form_start(form, {'attr': {'class': 'review-form'}}) }}
+            <div class="form-field">
+                <div class="note-bubble">
+                    <div class="rating">
+                        <input type="radio" name="bubble" id="bubble1" value="5">
+                        <label for="bubble1"></label>
 
-    </main>
+                        <input type="radio" name="bubble" id="bubble2" value="4">
+                        <label for="bubble2"></label>
+
+                        <input type="radio" name="bubble" id="bubble3" value="3">
+                        <label for="bubble3"></label>
+
+                        <input type="radio" name="bubble" id="bubble4" value="2">
+                        <label for="bubble4"></label>
+
+                        <input type="radio" name="bubble" id="bubble5" value="1">
+                        <label for="bubble5"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-field">
+                <div class="field-input comment">
+                    {{ form_widget(form.comment) }}
+                </div>
+            </div>
+            <div class="form-field button-wrapper">
+                <input type="submit" class="form-button"  name="review-btn" value="Envoyer" />
+            </div>
+            {{ form_end(form) }}
+    </section>
+    {% endif %}
+    <div class="review-container">
+        <h2 class="review-mainTitle">Avis</h2>
+        {% if reviews != null %}
+        {% for review in reviews %}
+            <div class="review-wrapper">
+                <div class="patient-review">
+                    <div>
+                        <div class="review-date">
+                            <h4>{{ review.patient_id.name }} {{ review.patient_id.lastName }}</h4>
+                            <p> "{{review.postDate|date("d M Y (H:i)", "Europe/Paris") }}"</p>
+                        </div>
+                        <p class="review-comment">{{ review.comment }}</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="review-note">{{ review.note }}</p>
+                </div>
+            </div>
+        {% endfor %}
+        {% else%}
+        <h4 id="empty-review">Soyez le premier à laisser un avis en devenant membre</h4>
+        {% endif %}
+    </div>
+    </div>
 {% endblock %}

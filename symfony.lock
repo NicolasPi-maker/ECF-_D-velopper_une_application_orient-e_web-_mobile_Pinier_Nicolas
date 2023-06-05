@@ -1,13 +1,4 @@
 {
-    "doctrine/annotations": {
-        "version": "1.13",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "main",
-            "version": "1.10",
-            "ref": "64d8583af5ea57b7afa4aba4b159907f3a148b05"
-        }
-    },
     "doctrine/doctrine-bundle": {
         "version": "2.7",
         "recipe": {
@@ -43,18 +34,6 @@
             "version": "3.0",
             "ref": "b131e6cbfe1b898a508987851963fff485986285"
         }
-    },
-    "symfony/apache-pack": {
-        "version": "1.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes-contrib",
-            "branch": "main",
-            "version": "1.0",
-            "ref": "9d254a22efca7264203eea98b866f16f944b2f09"
-        },
-        "files": [
-            "./public/.htaccess"
-        ]
     },
     "symfony/console": {
         "version": "6.1",

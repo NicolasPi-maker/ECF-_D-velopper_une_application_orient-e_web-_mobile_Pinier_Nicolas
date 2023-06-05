@@ -14,15 +14,17 @@ main {
 
 .form-wrapper {
     min-height: 95vh;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .mainTitle {
     color: #c4dfaa;
-    font-size: 6em;
+    font-size: 2em;
     font-family: 'Baloo Chettan 2', cursive;
-    font-weight: bold;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+    background-color: white;
+    padding: 5px 30px;
+    border-radius: 20px;
 }
 
 .wrong-login {
@@ -31,7 +33,7 @@ main {
     border-radius: 20px;
     padding: 0.5em;
     margin: 1em 0;
-    font-size: 2.25em;
+    font-size: 1em;
 }
 
 .input-wrapper {
@@ -55,7 +57,8 @@ main {
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    font-size: 3em;
+    font-size: 1.5em;
+    font-weight: bold;
     color: whitesmoke;
 }
 
@@ -65,21 +68,28 @@ main {
     border: none;
     margin-top: 1em;
     width: 100%;
-    font-size: 2em;
+    font-size: 1em;
     padding: 0.25em;
+}
+
+.button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .form-button {
     transition: linear 0.2s;
-    width: 15em;
-    padding: 0.25em;
-    margin-bottom: 2em;
+    padding: 0.5em 0;
     background-color: #c4dfaa;
     border: none;
-    border-radius: 30px;
+    border-radius: 25px;
     color: white;
-    font-size: 3em;
     font-weight: bold;
+    margin: 1em 2em;
+    font-size: 1em;
+    width: 100%;
 }
 
 .form-button:hover {
@@ -94,6 +104,16 @@ main {
 
     .wrong-login {
         font-size: 1em;
+    }
+
+    .form-wrapper {
+        display: flex;
+        width: 25%;
+        margin: auto;
+    }
+
+    .input-wrapper {
+        width: 100%;
     }
 
     .form-field {
@@ -117,15 +137,15 @@ main {
         color: black;
     }
 
+    .button-wrapper {
+        justify-content: center;
+    }
+    
     .form-button {
-        min-width: 10%;
-        padding: 0.5em;
-        margin-bottom: 20em;
-        background-color: #c4dfaa;
-        border: none;
-        border-radius: 30px;
-        color: white;
+        transition: linear 0.2s;
+        width: 100%;
         font-size: 1em;
-        font-weight: bold;
+        margin: 1.5em;
+        cursor: pointer;
     }
 }

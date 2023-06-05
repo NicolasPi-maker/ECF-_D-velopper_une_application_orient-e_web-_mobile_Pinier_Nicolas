@@ -8,22 +8,21 @@
 {% endblock %}
 
 {% block content %}
- <main>
      <div class="welcome-branding">
         <img src="{{ asset('uploads/assets/mobile-brooke-lark-08bOYnH_r_E-unsplash.jpg') }}" alt="welcome background image" class="welcome-img main-image"/>
-         <p class="welcome-text">Bienvenue, découvrez mes recettes  👇</p>
+         <a href="/#anchor-recipes" class="welcome-text">Bienvenue, découvrez mes recettes  👇</a>
      </div>
-    <h2 class="recipe-mainTitle">Recettes</h2>
+    <h2 class="recipe-mainTitle" id="anchor-recipes">Recettes</h2>
 
    {% if patient %}
        {% if patientRecipes %}
        <div class="recipe-container">
          {% for patientRecipe in patientRecipes %}
          <div class="recipe-wrapper">
-          <h3 class="recipe-title">{{ patientRecipe.title }}</h3>
-          <a href="{{'/recipe'~ patientRecipe.id ~''}}">
-           <img src="{{ asset('uploads/recipe_image/'~ patientRecipe.photo ~'') }}" alt="{{patientRecipe.title}}" class="welcome-img recipe-img"/>
-          </a>
+            <a href="{{'/recipe'~ patientRecipe.id ~''}}">
+                <h3 class="recipe-title">{{ patientRecipe.title }}</h3>
+                <img src="{{ asset('uploads/recipe_image/'~ patientRecipe.photo ~'') }}" alt="{{patientRecipe.title}}" class="welcome-img recipe-img"/>
+            </a>
          <a href="{{'/recipe'~ patientRecipe.id ~''}}" class="see-more-link">
              Voir plus
          </a>
@@ -49,5 +48,4 @@
             {% endfor %}
          </div>
     {% endif %}
- </main>
 {% endblock %}

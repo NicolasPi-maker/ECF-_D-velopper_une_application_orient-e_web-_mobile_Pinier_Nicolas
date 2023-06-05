@@ -3,12 +3,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .mainTitle {
-    font-size: 4.5em;
-    font-family: 'Baloo Chettan 2', cursive;
-    margin-bottom: 0;
+    font-size: 2em;
+    font-family: 'Times New Roman', Times, serif, cursive;
+    margin-bottom: 0.25em;
 }
 
 .title-text, .legal-text {
@@ -16,12 +17,8 @@
 }
 
 .title-text {
-    font-size: 2em;
+    font-size: 1em;
     margin: 0;
-}
-
-.legal-text {
-    margin: 10em 2em;
 }
 
 .legal-text > h3 {
@@ -33,8 +30,9 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
-        max-width: 75%;
-        margin-bottom: 2em;
+        width: 75%;
+        margin: auto;
+        align-items: center;
     }
 
     .legal-title {

@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-     <header>
+     <header id="anchor-home">
          <nav>
              <div id="navigation-menu">
                  <div id="mySidenav" class="sidenav">
@@ -39,7 +39,7 @@
 
              <div class="link-navbar">
                  <ul class="nav-links">
-                     <li><a href="/">Mes services</a></li>
+                     <li><a href="/">Accueil</a></li>
                      <li><a href="/about">A propos</a></li>
                      <li><a href="/contact">Contact</a></li>
                      {% if app.user %}
@@ -59,12 +59,13 @@
     </main>
     <footer>
         <div class="footer-branding foot-logo">
-            <a href="/">
+            <a href="/#anchor-home">
                 <h2 class="footer-title">Sandrine Coupart</h2>
             </a>
         </div>
         <div class="footer-contact-link">
             <ul class="contact-link">
+                <li><a href="/">Accueil</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <li><a href="/about">A Propos</a></li>
                 <li><a href="/legal_notices">Mentions légales</a></li>

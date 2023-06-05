@@ -8,18 +8,10 @@
 {% endblock %}
 
 {% block content %}
-<main>
     <form method="post">
         <section class="form-wrapper">
-            {#
-                {% if app.user %}
-                    <div class="mb-3">
-                        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-                    </div>
-                {% endif %}
-            #}
+            <h1 class="mainTitle">Connexion</h1>
             <div class="input-wrapper">
-                <h1 class="mainTitle">Connexion</h1>
                 {% if error %}
                     <div class="wrong-login">L'identifiant ou le mot de passe est incorrect</div>
                 {% endif %}
@@ -38,7 +30,7 @@
                 </div>
 
                 <input type="hidden" name="_csrf_token"
-                       value="{{ csrf_token('authenticate') }}"
+                        value="{{ csrf_token('authenticate') }}"
                 >
             </div>
 
@@ -52,11 +44,9 @@
                     </label>
                 </div>
             #}
-
-            <button class="form-button" type="submit">
-                Connexion
-            </button>
+            <div class="button-wrapper">
+                <button class="form-button" type="submit">Connexion </button>
+            </div>
         </section>
     </form>
-</main>
 {% endblock %}

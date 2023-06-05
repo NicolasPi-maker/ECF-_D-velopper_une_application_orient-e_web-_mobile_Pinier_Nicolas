@@ -3,19 +3,20 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
 }
 
 .mainTitle {
     color: #c4dfaa;
-    font-size: 4em;
+    font-size: 2em;
     font-family: 'Baloo Chettan 2', cursive;
-    margin-bottom: 1em;
 }
 
-.form-wrapper, .form-field {
+.form-wrapper {
     width: 100%;
-    margin: 2em;
+}
+
+.form-field {
+    margin: 2em 1em;
 }
 
 .field-label, .field-input {
@@ -24,30 +25,32 @@ main {
 
 .field-label {
     align-items: flex-start;
-    font-size: 3em;
+    font-size: 1em;
     margin: 0.5em;
     color: #2f3542;
 }
 
 .field-input {
-    border-radius: 20px;
+    border-radius: 10px;
     border-color: lightgray;
-    padding: 0.5em;
-    font-size: 1.75em;
+    font-size: 1em;
+    width: 100%;
+    display: flex;
 }
 
 .field-input > * {
-    width: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
     border-color: lightgray;
-    font-size: 1em;
-    padding: 0.75em 0;
+    font-size: 0.8em;
+    padding: 0.25em;
+    width: 100%;
 }
 
 .message-input > * {
     height: 10em;
     resize: none;
     padding: 0.5em;
+    font-family: Georgia, 'Times New Roman', Times, serif
 }
 
 .button-wrapper {
@@ -59,15 +62,15 @@ main {
 
 .form-button {
     transition: linear 0.2s;
-    width: 90%;
-    padding: 0.25em;
-    margin: 1em 2em;
+    padding: 0.5em 0;
     background-color: #c4dfaa;
     border: none;
-    border-radius: 30px;
+    border-radius: 25px;
     color: white;
-    font-size: 3em;
     font-weight: bold;
+    margin: 1em 2em;
+    font-size: 1em;
+    width: 100%;
 }
 
 .form-button:hover {
@@ -94,7 +97,7 @@ main {
     }
 
     .field-input > * {
-        font-size: 0.6em;
+        font-size: 1em;
         padding: 0.6em;
     }
 
@@ -103,14 +106,14 @@ main {
     }
 
     .button-wrapper {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
+        justify-content: end;
     }
-
+    
     .form-button {
-        width: 15%;
-        padding: 1em;
+        transition: linear 0.2s;
+        width: 20%;
         font-size: 1em;
+        margin: 1.5em;
+        cursor: pointer;
     }
 }

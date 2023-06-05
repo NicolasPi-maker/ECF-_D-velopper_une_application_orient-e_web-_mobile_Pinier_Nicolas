@@ -13,7 +13,7 @@ class Message
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 60)]
+    #[ORM\Column(length: 60, nullable: true)]
     private ?string $name = null;
 
     #[ORM\Column(length: 60, nullable: true)]

@@ -15,7 +15,7 @@ Set `Apache` and `MySQL` to start on xampp controller pannel.
 
 Open [http://localhost](http://localhost:3000) with your browser to see the result.
 
-## Create an admin user in your database
+## Create an admin user in your local database
 
 You will need to install Symfony maker bundle
 
